@@ -4,7 +4,7 @@ $(document).ready(function () {
         navigator.mozGetUserMedia;
 
     if (navigator.getUserMedia) {
-        navigator.getUserMedia({video: true},
+        navigator.getUserMedia({ video: true },
             function (stream) {
                 var video = document.querySelector('video');
                 video.srcObject = stream;
@@ -21,4 +21,16 @@ $(document).ready(function () {
     }
 });
 
-console.log("hey");
+$("#takePhoto").on("click", function () {
+    $("#canvas").attr("width", "400");
+    $("#canvas").attr("height", "300");
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    var video = document.getElementById('liveVideo');
+
+    console.log(canvas);
+    console.log(context);
+    console.log(video);
+
+    context.drawImage(video, 0, 0, 400, 300);
+});
