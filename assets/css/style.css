@@ -1,5 +1,39 @@
+.body{
+    box-sizing: border-box;
+}
+.booth{
+    width: 400px;
+    background-color: #ccc;
+    border: 10px solid #ddd;
+    margin: 0 auto;
+}
+/* #liveVideo{
+    text-align: center;
+    border-style: solid, thick, #ddd;
+} */
 
-#header{
-    border-radius: 7px;
-    align-content: center;
-};
+.header-container{
+    background-color: deepskyblue;
+    color: white;
+    width: 80%;
+    height: 80px;
+    font-size: 36px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+.button-section{
+    width: 80%;
+    height: 80px;
+    font-size: 36px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 80px;
+}
+.jumbo-tron{
+    width: 80%;
+    height: 80px;
+    margin:auto;
+}
