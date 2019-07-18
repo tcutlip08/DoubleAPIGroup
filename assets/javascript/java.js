@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Permission to access cam and stream video and audio
 
 /* <!--         <input type="file" accept="image/*;capture=camera">
@@ -88,3 +89,29 @@ function gotStream(stream) {
 function handleError(error) {
     console.error('Error: ', error);
 }
+=======
+$(document).ready(function () {
+    navigator.getUserMedia = navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia;
+
+    if (navigator.getUserMedia) {
+        navigator.getUserMedia({video: true},
+            function (stream) {
+                var video = document.querySelector('video');
+                video.srcObject = stream;
+                video.onloadedmetadata = function (e) {
+                    video.play();
+                };
+            },
+            function (err) {
+                console.log("The following error occurred: " + err.name);
+            }
+        );
+    } else {
+        console.log("getUserMedia not supported");
+    }
+});
+
+console.log("hey");
+>>>>>>> 70b5ca230d761948eea6114121d177bf8071c2bb
