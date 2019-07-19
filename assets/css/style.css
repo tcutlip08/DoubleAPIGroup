@@ -15,7 +15,6 @@
 .header-container{
     background-color: deepskyblue;
     color: white;
-    width: 80%;
     height: 80px;
     font-size: 36px;
     text-align: center;
@@ -24,7 +23,6 @@
     margin-bottom: 10px;
 }
 .button-section{
-    width: 80%;
     height: 80px;
     font-size: 36px;
     text-align: center;
@@ -47,4 +45,14 @@
     left:0;
     right:0;
     margin:auto;
+<<<<<<< HEAD
+}
+
+.card-body{
+    width: 80%;
+    height: 80px;
+    margin-top: 20px;
+}
+=======
         }
+>>>>>>> 40b5293c9f65969a3590a41ab9a3c1cab56f4919
