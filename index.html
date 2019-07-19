@@ -15,6 +15,7 @@
         crossorigin='anonymous'></script>
     <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js'></script>
     <link rel='stylesheet' href='assets/css/style.css'>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATyi1cJZ_c8qY5vVvDu4kpkS8un36io1I&callback=getLocation"></script>
 </header>
 
 <body>
@@ -51,8 +52,7 @@
         <button type="button" class="btn btn-primary" id="fear-button">Fear</button>
         <button type="button" class="btn btn-primary" id="happiness-button">Happiness</button>
     </div>
-
-    <div class="jumbo-tron">
+   <div class="jumbo-tron">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4"><strong>Hello</strong></h1>
@@ -60,6 +60,29 @@
             </div>
         </div>
     </div>
-    <script type='text/javascript' src='assets/javascript/java.js'></script>
 
+<div id="googleMap"></div>
+
+    <!--face++-->
+    <!-- 
+    <div class='row'>
+        <div class='booth'>
+            <video id="liveVideo" width="400px" height="300px"></video>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button id="takePhoto">Take Picture</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="output">
+                <canvas id="canvas">
+                </canvas>
+                <div id="map"></div>
+            </div>
+        </div>
+    </div> -->
+    <script type='text/javascript' src='assets/javascript/java.js'></script>
     </html>
