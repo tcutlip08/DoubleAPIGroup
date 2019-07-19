@@ -15,7 +15,7 @@
 .header-container{
     background-color: deepskyblue;
     color: white;
-    width: 80%;
+    width: 100%;
     height: 80px;
     font-size: 36px;
     text-align: center;
@@ -24,7 +24,7 @@
     margin-bottom: 10px;
 }
 .button-section{
-    width: 80%;
+    width: 100%;
     height: 80px;
     font-size: 36px;
     text-align: center;
@@ -33,7 +33,7 @@
     margin-bottom: 10px;
 }
 .jumbo-tron{
-    width: 80%;
+    width: 100%;
     height: 50px;
     margin:auto;
 }
