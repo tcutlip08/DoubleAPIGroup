@@ -21,7 +21,7 @@
     text-align: center;
     margin: auto;
     padding: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 .button-section{
     width: 80%;
@@ -30,10 +30,21 @@
     text-align: center;
     margin: auto;
     padding: 10px;
-    margin-bottom: 80px;
+    margin-bottom: 10px;
 }
 .jumbo-tron{
     width: 80%;
-    height: 80px;
+    height: 50px;
     margin:auto;
 }
+
+#googleMap { 
+    height: 25%;
+    width:80%;
+    position:absolute;
+    top:30;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+        }
