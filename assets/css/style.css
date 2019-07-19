@@ -20,7 +20,7 @@
     text-align: center;
     margin: auto;
     padding: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 .button-section{
     height: 80px;
@@ -28,12 +28,24 @@
     text-align: center;
     margin: auto;
     padding: 10px;
-    margin-bottom: 80px;
+    margin-bottom: 10px;
 }
 .jumbo-tron{
     width: 80%;
-    height: 80px;
+    height: 50px;
     margin:auto;
+}
+
+#googleMap { 
+    height: 25%;
+    width:80%;
+    position:absolute;
+    top:30;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+<<<<<<< HEAD
 }
 
 .card-body{
@@ -41,3 +53,6 @@
     height: 80px;
     margin-top: 20px;
 }
+=======
+        }
+>>>>>>> 40b5293c9f65969a3590a41ab9a3c1cab56f4919
