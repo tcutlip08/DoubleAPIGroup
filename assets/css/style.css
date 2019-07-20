@@ -21,6 +21,11 @@
     padding: 10px;
     margin-bottom: 10px;
 }
+
+.button-section img{
+    /* width: 60px; */
+    height: 75px;
+}
 .jumbo-tron{
     width: 80%;
     height: 50px;
