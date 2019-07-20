@@ -3,8 +3,8 @@
 function initMapforSadness() {
     var broadway = {
       info:
-        '<strong>Chipotle on Broadway</strong><br>\
-          5224 N Broadway St<br> Chicago, IL 60640<br>\
+        '<strong>Fernbank Museum of Natural History</strong><br>\
+        767 Clifton Rd, <br> Atlanta, GA 30307<br>\
           <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
       lat: 41.976816,
       long: -87.659916,
