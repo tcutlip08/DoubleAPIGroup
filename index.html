@@ -14,78 +14,95 @@
         integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'
         crossorigin='anonymous'></script>
     <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/4.12.0/firebase.js'></script>
     <link rel='stylesheet' href='assets/css/style.css'>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATyi1cJZ_c8qY5vVvDu4kpkS8un36io1I&callback=getLocation"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATyi1cJZ_c8qY5vVvDu4kpkS8un36io1I&callback=getLocation"></script>
 </header>
 
 <body>
+     <!-- <div class='row'>
+            <div class='booth'>
+                <video id="liveVideo" width="400px" height="300px"></video>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button id="takePhoto">Take Picture</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="output">
+                    <canvas id="canvas">
+                    </canvas>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div> -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="header-container">
-                    JUST GO WITH THE FLO
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="button-section">
-                    <button type="button" class="btn btn-primary" id="sadness-button">Sadness</button>
-                    <button type="button" class="btn btn-primary" id="neutral-button">Neutral</button>
-                    <button type="button" class="btn btn-primary" id="disgust-button">Disgust</button>
-                    <button type="button" class="btn btn-primary" id="anger-button">Anger</button>
-                    <button type="button" class="btn btn-primary" id="surprise-button">Surprise</button>
-                    <button type="button" class="btn btn-primary" id="fear-button">Fear</button>
-                    <button type="button" class="btn btn-primary" id="happiness-button">Happiness</button>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="jumbo-tron">
-                    <div class="jumbotron jumbotron-fluid">
-                        <div class="container">
-                            <h1 class="display-4"><strong>Hello</strong></h1>
-                            <p class="lead">Welcome to FLO! With cutting edge technology we can scan your face and give
-                                you
-                                suggestions of things to do and places to go based off of your age and emotions! Lets
-                                get started!
+
+        <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header-container">
+                            JUST GO WITH THE FLO
                         </div>
                     </div>
                 </div>
+    <div class="button-section">
+        <button type="button" class="btn btn-primary" id="sadness-button" onclick="initMapforSadness()">Sadness</button>
+        <button type="button" class="btn btn-primary" id="neutral-button" onclick="initMapforNeutral()">Neutral</button>
+        <button type="button" class="btn btn-primary" id="disgust-button" onclick="initMapforDisgust()">Disgust</button>
+        <button type="button" class="btn btn-primary" id="anger-button" onclick="initMapforAnger()">Anger</button>
+        <button type="button" class="btn btn-primary" id="surprise-button" onclick="initMapforSurprise()">Surprise</button>
+        <button type="button" class="btn btn-primary" id="fear-button" onclick="initMapforFear()">Fear</button>
+        <button type="button" class="btn btn-primary" id="happiness-button" onclick="initMapforHappiness()">Happiness</button>
+    </div>
+   <div class="jumbo-tron">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4"><strong>Hello</strong></h1>
+                <p class="lead">Welcome to FLO! With cutting edge technology we can scan your face and give you suggestions of things to do and places to go based off of your age and emotions! Lets get started!
             </div>
         </div>
-        
-
-    </div>
-
-
-<div id="googleMap"></div>
-
-    <!--face++-->
-    <!-- 
-    <div class='row'>
-        <div class='booth'>
-            <video id="liveVideo" width="400px" height="300px"></video>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <button id="takePhoto">Take Picture</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="output">
-                <canvas id="canvas">
-                </canvas>
-                <div id="map"></div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="filesubmit">
+                    <!-- <input type="file" class="file-select" accept="image/*" /> -->
+                    <input type="text" id="inputImage">
+                    <button class="urlSubmit">SUBMIT</button>
+                </div>
             </div>
         </div>
-    </div> -->
+
+        <!-- face++ -->
+        <!-- <div class='row'>
+            <div class='booth'>
+                <video id="liveVideo" width="400px" height="300px"></video>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button id="takePhoto">Take Picture</button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="output">
+                        <canvas id="canvas">
+                        </canvas>
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div> -->
+
+        <!-- FireBase Testing -->
+        <!-- </div> -->
+    </div>
+
+<div id="map"></div>
+    <div id="googleMap"></div>
     <script type='text/javascript' src='assets/javascript/java.js'></script>
+</body>
 
-    </script>
-
-    </html>
+</html>
