@@ -15,7 +15,6 @@
 .header-container{
     background-color: deepskyblue;
     color: white;
-    width: 80%;
     height: 80px;
     font-size: 36px;
     text-align: center;
@@ -24,7 +23,6 @@
     margin-bottom: 10px;
 }
 .button-section{
-    width: 80%;
     height: 80px;
     font-size: 36px;
     text-align: center;
