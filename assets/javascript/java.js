@@ -1,12 +1,12 @@
 
 function initMapforSadness() {
     var broadway = {
-      info:
-        '<strong>Fernbank Museum of Natural History</strong><br>\
+        info:
+            '<strong>Fernbank Museum of Natural History</strong><br>\
         767 Clifton Rd, <br> Atlanta, GA 30307<br>\
           <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-      lat: 41.976816,
-      long: -87.659916,
+        lat: 41.976816,
+        long: -87.659916,
     }
 }
 var myLatLng;
@@ -154,9 +154,17 @@ function getLocation() {
 //     }
 // });
 
+$(".pickImage").on("click", function () {
 
-$(".urlSubmit").on("click", function () {
-    // console.log($("#inputImage").val().trim());
+    var imgSrc = {
+        nate: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Nate.jpg?raw=true",
+        baldWhiteDude: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/BaldWhiteDude.jpg?raw=true",
+        aaron: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Aaron.JPG?raw=true",
+        praveen: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Praveen.jpg?raw=true",
+        jonathan: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Jonathan.png?raw=true",
+        notAsBaldBlackDude: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/NotAsBaldBlackDude.png?raw=true"
+    }
+    var chosenImgUrl;
 
     // $("#canvas").attr("width", "400");
     // $("#canvas").attr("height", "300");
@@ -169,67 +177,90 @@ $(".urlSubmit").on("click", function () {
     // console.log(video);
 
     // context.drawImage(video, 0, 0, 400, 300);
+    if ($(this).attr("id") === "nate") {
+        chosenImgUrl = imgSrc.nate;
+    } else if ($(this).attr("id") === "praveen") {
+        chosenImgUrl = imgSrc.praveen;
+    } else if ($(this).attr("id") === "aaron") {
+        chosenImgUrl = imgSrc.aaron;
+    } else if ($(this).attr("id") === "jonathan") {
+        chosenImgUrl = imgSrc.jonathan;
+    } else if ($(this).attr("id") === "baldWhiteDude") {
+        chosenImgUrl = imgSrc.baldWhiteDude;
+    } else if ($(this).attr("id") === "notAsBaldBlackDude") {
+        chosenImgUrl = imgSrc.notAsBaldBlackDude;
+    } 
 
-    var url = "https://api-us.faceplusplus.com/facepp/v3/detect"
+    var urlFaceToken = "https://api-us.faceplusplus.com/facepp/v3/detect"
     var api_Key = "api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF"
     var api_Secret = "api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
-    // var photoToSearch = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    // var photo = $("#inputImage").val().trim();
-    var photo = "https://github.com/tcutlip08/Bootstrap-Portfolio/blob/master/assets/images/Self%20Pic.jpg?raw=true";
-    var returnAttributes = "return_attributes=emotion"
-    var queryURL = url + "?" + api_Key + "&image_url=" + photo + "&" + api_Secret;
-    var test = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF&image_url=https://scontent-mia3-1.xx.fbcdn.net/v/t1.0-9/1378013_10151972987408140_1875540956_n.jpg?_nc_cat=111%26_nc_oc=AQnHUVuAOilpaa4UUrRIuNQU_0A7LIuzJInRpApI_po3Tz26B5puXXvxhLkfrgEU80k%26_nc_ht=scontent-mia3-1.xx%26oh=412bd753fb2dbed927667b95fd6432ce%26oe=5DE5B805&api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
+    var photo = chosenImgUrl;
+    var queryURL = urlFaceToken + "?" + api_Key + "&image_url=" + photo + "&" + api_Secret;
 
     console.log(queryURL);
-    console.log(test);
     $.ajax({
         url: queryURL,
         method: "POST"
     })
         .then(function (response) {
             console.log(response);
-            // var results = response.data;
-            // console.log(results);
+            var result = response.faces;
 
-            // for (var i = 0; i < results.length; i++) {
+            console.log(result[0].face_token);
 
-            //     var gifDiv = $("<div>");
-            //     gifDiv.addClass("card w-75 text-center");
-
-            //     var rating = results[i].rating;
-
-            //     var p = $("<h5>").html("Rating: " + rating);
-
-            //     var gifImage = $("<img>");
-            //     gifImage.addClass("gif");
-            //     gifImage.attr("src", results[i].images.fixed_width_still.url);
-            //     gifImage.attr("data-still", results[i].images.fixed_width_still.url);
-            //     gifImage.attr("data-animate", results[i].images.fixed_width.url);
-            //     gifImage.attr("data-state", "still");
-            //     gifImage.attr("style", "padding: 10px");
-
-            //     var imageTitle = $("<h4>");
-            //     imageTitle.addClass("gifTitle");
-            //     var title = (results[i].title.split(" GIF"));
-            //     imageTitle.html(title[0].toUpperCase());
-
-            //     var imageDetail = $("<div>");
-            //     imageDetail.addClass("imageDetail");
-            //     imageDetail.append(imageTitle);
-
-            //     var favButton = $("<button>");
-            //     favButton.addClass("btn btn-primary").attr("id", "favBtn").text("✩Favorites");
-
-            //     gifDiv.prepend(favButton);
-            //     gifDiv.prepend(p);
-            //     gifDiv.prepend(imageDetail);
-            //     gifDiv.prepend(gifImage);
-
-            //     $("#displayGifs").prepend("<br>")
-            //     $("#displayGifs").prepend(gifDiv);
-            // }
+            var urlEmotions = "https://api-us.faceplusplus.com/facepp/v3/detect"
+            var returnAttributes = "return_attributes=emotion"
+            queryURL = urlEmotions + "?" + api_Key + "&image_url=" + photo + "&" + api_Secret + "&face_tokens" + "&" + returnAttributes
+            $.ajax({
+                url: queryURL,
+                method: 'POST'
+            }).then(function (response) {
+                result = response.faces;
+                var currentEmotion = findCurrentEmotion(result[0].attributes.emotion);
+                console.log(currentEmotion);
+            });
         });
 });
+
+function findCurrentEmotion(allEmo) {
+    console.log("Find Emotion Function!!");
+    console.log(allEmo);
+
+    var anger = allEmo.anger;
+    var fear = allEmo.fear;
+    var disgust = allEmo.disgust;
+    var happiness = allEmo.happiness;
+    var neutral = allEmo.neutral;
+    var sadness = allEmo.sadness;
+    var surprise = allEmo.surprise;
+
+    var allEmotions = [anger, fear, disgust, happiness, neutral, sadness, surprise];
+
+    var currentEmotion = 0;
+    for (let i = 0; i < allEmotions.length; i++){
+        if (currentEmotion < allEmotions[i]){
+            currentEmotion = allEmotions[i];
+        }
+    }
+
+    if(currentEmotion === anger){
+        return "anger";
+    } else if (currentEmotion === fear){
+        return "fear";
+    } else if (currentEmotion === disgust){
+        return "disgust";
+    } else if (currentEmotion === happiness){
+        return "happiness";
+    } else if (currentEmotion === neutral){
+        return "neutral";
+    } else if (currentEmotion === sadness){
+        return "sadness";
+    } else if (currentEmotion === surprise){
+        return "surprise";
+    } else {
+        console.log("No returned emotion")
+    }
+}
 
 const config = {
     apiKey: "AIzaSyCDU6rYUeS3vBdWWsfuZGJQu07AHLGU7kU",
