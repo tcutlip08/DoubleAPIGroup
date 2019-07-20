@@ -1,13 +1,12 @@
 
-function detectBrowser() {
-    var useragent = navigator.userAgent;
-    var mapdiv = document.getElementById("map");
-    if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1) {
-        mapdiv.style.width = '100%';
-        mapdiv.style.height = '100%';
-    } else {
-        mapdiv.style.width = '600px';
-        mapdiv.style.height = '800px';
+function initMapforSadness() {
+    var broadway = {
+      info:
+        '<strong>Fernbank Museum of Natural History</strong><br>\
+        767 Clifton Rd, <br> Atlanta, GA 30307<br>\
+          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+      lat: 41.976816,
+      long: -87.659916,
     }
 }
 var myLatLng;
