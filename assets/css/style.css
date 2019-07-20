@@ -36,7 +36,7 @@
     margin:auto;
 }
 
-#googleMap { 
+#map { 
     height: 25%;
     width:80%;
     position:absolute;
@@ -45,14 +45,4 @@
     left:0;
     right:0;
     margin:auto;
-<<<<<<< HEAD
-}
-
-.card-body{
-    width: 80%;
-    height: 80px;
-    margin-top: 20px;
-}
-=======
         }
->>>>>>> 40b5293c9f65969a3590a41ab9a3c1cab56f4919
