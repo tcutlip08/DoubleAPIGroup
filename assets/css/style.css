@@ -1,17 +1,45 @@
-body {
+/* #liveVideo{
     text-align: center;
+    border-style: solid, thick, #ddd;
+} */
+
+.header-container{
+    background-color: deepskyblue;
+    color: white;
+    height: 80px;
+    font-size: 36px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.button-section{
+    height: 80px;
+    font-size: 36px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.jumbo-tron{
+    width: 80%;
+    height: 50px;
+    margin:auto;
 }
 
-.booth {
-    background-color: #ccc;
-    border: 10px solid #ddd;
-    margin: auto;
+#googleMap { 
+    height: 25%;
+    width:80%;
+    position:absolute;
+    top:30;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
 }
 
-#canvas {
-    width: 400px;
-    height: 300px;
-    background-color: #ccc;
-    border: 10px solid #ddd;
-    margin: auto;
+.card-body{
+    width: 80%;
+    height: 80px;
+    margin-top: 20px;
 }
