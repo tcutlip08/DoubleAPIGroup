@@ -33,80 +33,88 @@
 // });
 
 
-$(".urlSubmit").on("click", function () {
-    // console.log($("#inputImage").val().trim());
+// $(".urlSubmit").on("click", function () {
+//     // console.log($("#inputImage").val().trim());
 
-    // $("#canvas").attr("width", "400");
-    // $("#canvas").attr("height", "300");
-    // var canvas = document.getElementById('canvas');
-    // var context = canvas.getContext('2d');
-    // var video = document.getElementById('liveVideo');
+//     // $("#canvas").attr("width", "400");
+//     // $("#canvas").attr("height", "300");
+//     // var canvas = document.getElementById('canvas');
+//     // var context = canvas.getContext('2d');
+//     // var video = document.getElementById('liveVideo');
 
-    // console.log(canvas);
-    // console.log(context);
-    // console.log(video);
+//     // console.log(canvas);
+//     // console.log(context);
+//     // console.log(video);
 
-    // context.drawImage(video, 0, 0, 400, 300);
+//     // context.drawImage(video, 0, 0, 400, 300);
 
-    var url = "https://api-us.faceplusplus.com/facepp/v3/detect"
-    var api_Key = "api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF"
-    var api_Secret = "api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
-    // var photoToSearch = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    // var photo = $("#inputImage").val().trim();
-    var photo = "https://github.com/tcutlip08/Bootstrap-Portfolio/blob/master/assets/images/Self%20Pic.jpg?raw=true";
-    var returnAttributes = "return_attributes=emotion"
-    var queryURL = url + "?" + api_Key + "&image_url=" + photo + "&" + api_Secret;
-    var test = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF&image_url=https://scontent-mia3-1.xx.fbcdn.net/v/t1.0-9/1378013_10151972987408140_1875540956_n.jpg?_nc_cat=111%26_nc_oc=AQnHUVuAOilpaa4UUrRIuNQU_0A7LIuzJInRpApI_po3Tz26B5puXXvxhLkfrgEU80k%26_nc_ht=scontent-mia3-1.xx%26oh=412bd753fb2dbed927667b95fd6432ce%26oe=5DE5B805&api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
+//     var url = "https://api-us.faceplusplus.com/facepp/v3/detect"
+//     var api_Key = "api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF"
+//     var api_Secret = "api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
+//     // var photoToSearch = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+//     // var photo = $("#inputImage").val().trim();
+//     var photo = "https://github.com/tcutlip08/Bootstrap-Portfolio/blob/master/assets/images/Self%20Pic.jpg?raw=true";
+//     var returnAttributes = "return_attributes=emotion"
+//     var queryURL = url + "?" + api_Key + "&image_url=" + photo + "&" + api_Secret;
+//     var test = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF&image_url=https://scontent-mia3-1.xx.fbcdn.net/v/t1.0-9/1378013_10151972987408140_1875540956_n.jpg?_nc_cat=111%26_nc_oc=AQnHUVuAOilpaa4UUrRIuNQU_0A7LIuzJInRpApI_po3Tz26B5puXXvxhLkfrgEU80k%26_nc_ht=scontent-mia3-1.xx%26oh=412bd753fb2dbed927667b95fd6432ce%26oe=5DE5B805&api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
 
-    console.log(queryURL);
-    console.log(test);
-    $.ajax({
-        url: queryURL,
-        method: "POST"
-    })
-        .then(function (response) {
-            console.log(response);
-            // var results = response.data;
-            // console.log(results);
+//     console.log(queryURL);
+//     console.log(test);
+//     $.ajax({
+//         url: queryURL,
+//         method: "POST"
+//     })
+//         .then(function (response) {
+//             console.log(response);
+//             // var results = response.data;
+//             // console.log(results);
 
-            // for (var i = 0; i < results.length; i++) {
+//             // for (var i = 0; i < results.length; i++) {
 
-            //     var gifDiv = $("<div>");
-            //     gifDiv.addClass("card w-75 text-center");
+//             //     var gifDiv = $("<div>");
+//             //     gifDiv.addClass("card w-75 text-center");
 
-            //     var rating = results[i].rating;
+//             //     var rating = results[i].rating;
 
-            //     var p = $("<h5>").html("Rating: " + rating);
+//             //     var p = $("<h5>").html("Rating: " + rating);
 
-            //     var gifImage = $("<img>");
-            //     gifImage.addClass("gif");
-            //     gifImage.attr("src", results[i].images.fixed_width_still.url);
-            //     gifImage.attr("data-still", results[i].images.fixed_width_still.url);
-            //     gifImage.attr("data-animate", results[i].images.fixed_width.url);
-            //     gifImage.attr("data-state", "still");
-            //     gifImage.attr("style", "padding: 10px");
+//             //     var gifImage = $("<img>");
+//             //     gifImage.addClass("gif");
+//             //     gifImage.attr("src", results[i].images.fixed_width_still.url);
+//             //     gifImage.attr("data-still", results[i].images.fixed_width_still.url);
+//             //     gifImage.attr("data-animate", results[i].images.fixed_width.url);
+//             //     gifImage.attr("data-state", "still");
+//             //     gifImage.attr("style", "padding: 10px");
 
-            //     var imageTitle = $("<h4>");
-            //     imageTitle.addClass("gifTitle");
-            //     var title = (results[i].title.split(" GIF"));
-            //     imageTitle.html(title[0].toUpperCase());
+//             //     var imageTitle = $("<h4>");
+//             //     imageTitle.addClass("gifTitle");
+//             //     var title = (results[i].title.split(" GIF"));
+//             //     imageTitle.html(title[0].toUpperCase());
 
-            //     var imageDetail = $("<div>");
-            //     imageDetail.addClass("imageDetail");
-            //     imageDetail.append(imageTitle);
+//             //     var imageDetail = $("<div>");
+//             //     imageDetail.addClass("imageDetail");
+//             //     imageDetail.append(imageTitle);
 
-            //     var favButton = $("<button>");
-            //     favButton.addClass("btn btn-primary").attr("id", "favBtn").text("✩Favorites");
+//             //     var favButton = $("<button>");
+//             //     favButton.addClass("btn btn-primary").attr("id", "favBtn").text("✩Favorites");
 
-            //     gifDiv.prepend(favButton);
-            //     gifDiv.prepend(p);
-            //     gifDiv.prepend(imageDetail);
-            //     gifDiv.prepend(gifImage);
+//             //     gifDiv.prepend(favButton);
+//             //     gifDiv.prepend(p);
+//             //     gifDiv.prepend(imageDetail);
+//             //     gifDiv.prepend(gifImage);
 
-            //     $("#displayGifs").prepend("<br>")
-            //     $("#displayGifs").prepend(gifDiv);
-            // }
-        });
+//             //     $("#displayGifs").prepend("<br>")
+//             //     $("#displayGifs").prepend(gifDiv);
+//             // }
+//         });
+// });
+
+$("#onclick-show").hide();
+
+$(".btn").on("click", function () {
+    $("#first-page-hide").hide();
+
+    $("#onclick-show").show();
 });
 
 const config = {
