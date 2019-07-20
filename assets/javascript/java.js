@@ -156,79 +156,81 @@ function getLocation() {
 // });
 
 
-// $("#takePhoto").on("click", function () {
-//     $("#canvas").attr("width", "400");
-//     $("#canvas").attr("height", "300");
-//     var canvas = document.getElementById('canvas');
-//     var context = canvas.getContext('2d');
-//     var video = document.getElementById('liveVideo');
+$(".urlSubmit").on("click", function () {
+    // console.log($("#inputImage").val().trim());
 
-//     // console.log(canvas);
-//     // console.log(context);
-//     // console.log(video);
+    // $("#canvas").attr("width", "400");
+    // $("#canvas").attr("height", "300");
+    // var canvas = document.getElementById('canvas');
+    // var context = canvas.getContext('2d');
+    // var video = document.getElementById('liveVideo');
 
-//     context.drawImage(video, 0, 0, 400, 300);
+    // console.log(canvas);
+    // console.log(context);
+    // console.log(video);
 
-//     var url = "https://api-us.faceplusplus.com/facepp/v3/detect"
-//     var api_Key = "api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF"
-//     var api_Secret = "api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
-//     // var photoToSearch = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-//     var photo = "https://mail.google.com/mail/u/0?ui=2&ik=469f8e69d7&attid=0.1&permmsgid=msg-a:r4724190948597656535&th=16bee75430922fb7&view=att&disp=safe&realattid=f_jy2drxwz0";
-//     var returnAttributes = "return_attributes=emotion"
-//     var queryURL = url + "?" + api_Key + "&" + api_Secret + "&image_url=" + photo + "&return_facekey";
+    // context.drawImage(video, 0, 0, 400, 300);
 
-//     // https://scstylecaster.files.wordpress.com/2016/12/model-curly-hair-nose-ring.jpg
+    var url = "https://api-us.faceplusplus.com/facepp/v3/detect"
+    var api_Key = "api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF"
+    var api_Secret = "api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
+    // var photoToSearch = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    // var photo = $("#inputImage").val().trim();
+    var photo = "https://github.com/tcutlip08/Bootstrap-Portfolio/blob/master/assets/images/Self%20Pic.jpg?raw=true";
+    var returnAttributes = "return_attributes=emotion"
+    var queryURL = url + "?" + api_Key + "&image_url=" + photo + "&" + api_Secret;
+    var test = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF&image_url=https://scontent-mia3-1.xx.fbcdn.net/v/t1.0-9/1378013_10151972987408140_1875540956_n.jpg?_nc_cat=111%26_nc_oc=AQnHUVuAOilpaa4UUrRIuNQU_0A7LIuzJInRpApI_po3Tz26B5puXXvxhLkfrgEU80k%26_nc_ht=scontent-mia3-1.xx%26oh=412bd753fb2dbed927667b95fd6432ce%26oe=5DE5B805&api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
 
-//     console.log(queryURL);
+    console.log(queryURL);
+    console.log(test);
+    $.ajax({
+        url: queryURL,
+        method: "POST"
+    })
+        .then(function (response) {
+            console.log(response);
+            // var results = response.data;
+            // console.log(results);
 
-//     $.ajax({
-//         url: queryURL,
-//         method: "POST"
-//     })
-//         .then(function (response) {
-//             console.log(response);
-//             var results = response.data;
-//             console.log(results);
+            // for (var i = 0; i < results.length; i++) {
 
-//             // for (var i = 0; i < results.length; i++) {
+            //     var gifDiv = $("<div>");
+            //     gifDiv.addClass("card w-75 text-center");
 
-//             //     var gifDiv = $("<div>");
-//             //     gifDiv.addClass("card w-75 text-center");
+            //     var rating = results[i].rating;
 
-//             //     var rating = results[i].rating;
+            //     var p = $("<h5>").html("Rating: " + rating);
 
-//             //     var p = $("<h5>").html("Rating: " + rating);
+            //     var gifImage = $("<img>");
+            //     gifImage.addClass("gif");
+            //     gifImage.attr("src", results[i].images.fixed_width_still.url);
+            //     gifImage.attr("data-still", results[i].images.fixed_width_still.url);
+            //     gifImage.attr("data-animate", results[i].images.fixed_width.url);
+            //     gifImage.attr("data-state", "still");
+            //     gifImage.attr("style", "padding: 10px");
 
-//             //     var gifImage = $("<img>");
-//             //     gifImage.addClass("gif");
-//             //     gifImage.attr("src", results[i].images.fixed_width_still.url);
-//             //     gifImage.attr("data-still", results[i].images.fixed_width_still.url);
-//             //     gifImage.attr("data-animate", results[i].images.fixed_width.url);
-//             //     gifImage.attr("data-state", "still");
-//             //     gifImage.attr("style", "padding: 10px");
+            //     var imageTitle = $("<h4>");
+            //     imageTitle.addClass("gifTitle");
+            //     var title = (results[i].title.split(" GIF"));
+            //     imageTitle.html(title[0].toUpperCase());
 
-//             //     var imageTitle = $("<h4>");
-//             //     imageTitle.addClass("gifTitle");
-//             //     var title = (results[i].title.split(" GIF"));
-//             //     imageTitle.html(title[0].toUpperCase());
+            //     var imageDetail = $("<div>");
+            //     imageDetail.addClass("imageDetail");
+            //     imageDetail.append(imageTitle);
 
-//             //     var imageDetail = $("<div>");
-//             //     imageDetail.addClass("imageDetail");
-//             //     imageDetail.append(imageTitle);
+            //     var favButton = $("<button>");
+            //     favButton.addClass("btn btn-primary").attr("id", "favBtn").text("✩Favorites");
 
-//             //     var favButton = $("<button>");
-//             //     favButton.addClass("btn btn-primary").attr("id", "favBtn").text("✩Favorites");
+            //     gifDiv.prepend(favButton);
+            //     gifDiv.prepend(p);
+            //     gifDiv.prepend(imageDetail);
+            //     gifDiv.prepend(gifImage);
 
-//             //     gifDiv.prepend(favButton);
-//             //     gifDiv.prepend(p);
-//             //     gifDiv.prepend(imageDetail);
-//             //     gifDiv.prepend(gifImage);
-
-//             //     $("#displayGifs").prepend("<br>")
-//             //     $("#displayGifs").prepend(gifDiv);
-//             // }
-//         });
-// });
+            //     $("#displayGifs").prepend("<br>")
+            //     $("#displayGifs").prepend(gifDiv);
+            // }
+        });
+});
 
 const config = {
     apiKey: "AIzaSyCDU6rYUeS3vBdWWsfuZGJQu07AHLGU7kU",
@@ -246,30 +248,491 @@ var database = firebase.database();
 const storageService = firebase.storage();
 const storageRef = storageService.ref();
 
-document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
-document.querySelector('.file-submit').addEventListener('click', handleFileUploadSubmit);
+// document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
+// $(".file-select").on("change", handleFileUploadChange);
+// document.querySelector('.file-submit').addEventListener('click', handleFileUploadSubmit);
 
-let selectedFile;
+// let selectedFile;
 
-function handleFileUploadChange(e) {
-    selectedFile = e.target.files[0];
+// function handleFileUploadChange(e) {
+//     selectedFile = e.target.files[0];
+// }
+
+// function handleFileUploadSubmit(e) {
+//     const uploadTask = storageRef.child(`images/${selectedFile.name}`).put(selectedFile);
+//     //create a child directory called images, and place the file inside this directory
+
+//     uploadTask.on('state_changed', (snapshot) => {
+//         // Observe state change events such as progress, pause, and resume
+//     }, (error) => {
+//         // Handle unsuccessful uploads
+//         console.log(error);
+//     }, () => {
+//         // Do something once upload is complete
+//         console.log('success');
+//     });
+// }
+
+///////////////////////////////////////
+////////////!!Face++ Testing!!/////////
+///////////////////////////////////////
+
+var broadway = {
+    info:
+        '<strong>Chipotle on Broadway</strong><br>\
+            5224 N Broadway St<br> Chicago, IL 60640<br>\
+            <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 41.976816,
+    long: -87.659916,
 }
 
-function handleFileUploadSubmit(e) {
-    const uploadTask = storageRef.child(`images/${selectedFile.name}`).put(selectedFile);
-    //create a child directory called images, and place the file inside this directory
-
-    uploadTask.on('state_changed', (snapshot) => {
-        // Observe state change events such as progress, pause, and resume
-    }, (error) => {
-        // Handle unsuccessful uploads
-        console.log(error);
-    }, () => {
-        // Do something once upload is complete
-        console.log('success');
-    });
+var belmont = {
+    info:
+        '<strong>Chipotle on Belmont</strong><br>\
+            1025 W Belmont Ave<br> Chicago, IL 60657<br>\
+            <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
+    lat: 41.93967,
+    long: -87.655167,
 }
 
-    ///////////////////////////////////////
-    ////////////!!Face++ Testing!!/////////
-    ///////////////////////////////////////
+var sheridan = {
+    info:
+        '<strong>Chipotle on Sheridan</strong><br>\r\
+            6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
+            <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+    lat: 42.002707,
+    long: -87.661236,
+}
+
+//   var locations = {
+//     broadway: {info: '<strong>Chipotle on Belmont</strong><br>\ 1025 W Belmont Ave<br> Chicago, IL 60657<br>\ <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>'}
+//   }
+
+//Sadness
+
+function initMapforSadness() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: new google.maps.LatLng(41.976816, -87.659916),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+    })
+
+    var infowindow = new google.maps.InfoWindow({})
+
+    var marker, i
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map,
+        })
+
+        google.maps.event.addListener(
+            marker,
+            'click',
+            (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0])
+                    infowindow.open(map, marker)
+                }
+            })(marker, i)
+        )
+    }
+}
+
+
+//Happiness
+
+function initMapforHappiness() {
+    var broadway = {
+        info:
+            '<strong>Chipotle on Broadway</strong><br>\
+          5224 N Broadway St<br> Chicago, IL 60640<br>\
+          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+        lat: 41.976816,
+        long: -87.659916,
+    }
+
+    var belmont = {
+        info:
+            '<strong>Chipotle on Belmont</strong><br>\
+          1025 W Belmont Ave<br> Chicago, IL 60657<br>\
+          <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
+        lat: 41.93967,
+        long: -87.655167,
+    }
+
+    var sheridan = {
+        info:
+            '<strong>Chipotle on Sheridan</strong><br>\r\
+          6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
+          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+        lat: 42.002707,
+        long: -87.661236,
+    }
+
+    var locations = [
+        [broadway.info, broadway.lat, broadway.long, 0],
+        [belmont.info, belmont.lat, belmont.long, 1],
+        [sheridan.info, sheridan.lat, sheridan.long, 2],
+    ]
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: new google.maps.LatLng(41.976816, -87.659916),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+    })
+
+    var infowindow = new google.maps.InfoWindow({})
+
+    var marker, i
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map,
+        })
+
+        google.maps.event.addListener(
+            marker,
+            'click',
+            (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0])
+                    infowindow.open(map, marker)
+                }
+            })(marker, i)
+        )
+    }
+}
+
+
+//Neutral
+
+function initMapforNeutral() {
+    var broadway = {
+        info:
+            '<strong>Chipotle on Broadway</strong><br>\
+          5224 N Broadway St<br> Chicago, IL 60640<br>\
+          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+        lat: 41.976816,
+        long: -87.659916,
+    }
+
+    var belmont = {
+        info:
+            '<strong>Chipotle on Belmont</strong><br>\
+          1025 W Belmont Ave<br> Chicago, IL 60657<br>\
+          <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
+        lat: 41.93967,
+        long: -87.655167,
+    }
+
+    var sheridan = {
+        info:
+            '<strong>Chipotle on Sheridan</strong><br>\r\
+          6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
+          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+        lat: 42.002707,
+        long: -87.661236,
+    }
+
+    var locations = [
+        [broadway.info, broadway.lat, broadway.long, 0],
+        [belmont.info, belmont.lat, belmont.long, 1],
+        [sheridan.info, sheridan.lat, sheridan.long, 2],
+    ]
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: new google.maps.LatLng(41.976816, -87.659916),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+    })
+
+    var infowindow = new google.maps.InfoWindow({})
+
+    var marker, i
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map,
+        })
+
+        google.maps.event.addListener(
+            marker,
+            'click',
+            (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0])
+                    infowindow.open(map, marker)
+                }
+            })(marker, i)
+        )
+    }
+}
+
+
+//Anger
+
+function initMapforAnger() {
+    var broadway = {
+        info:
+            '<strong>Chipotle on Broadway</strong><br>\
+          5224 N Broadway St<br> Chicago, IL 60640<br>\
+          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+        lat: 41.976816,
+        long: -87.659916,
+    }
+
+    var belmont = {
+        info:
+            '<strong>Chipotle on Belmont</strong><br>\
+          1025 W Belmont Ave<br> Chicago, IL 60657<br>\
+          <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
+        lat: 41.93967,
+        long: -87.655167,
+    }
+
+    var sheridan = {
+        info:
+            '<strong>Chipotle on Sheridan</strong><br>\r\
+          6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
+          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+        lat: 42.002707,
+        long: -87.661236,
+    }
+
+    var locations = [
+        [broadway.info, broadway.lat, broadway.long, 0],
+        [belmont.info, belmont.lat, belmont.long, 1],
+        [sheridan.info, sheridan.lat, sheridan.long, 2],
+    ]
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: new google.maps.LatLng(41.976816, -87.659916),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+    })
+
+    var infowindow = new google.maps.InfoWindow({})
+
+    var marker, i
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map,
+        })
+
+        google.maps.event.addListener(
+            marker,
+            'click',
+            (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0])
+                    infowindow.open(map, marker)
+                }
+            })(marker, i)
+        )
+    }
+}
+
+
+//Surprise
+
+function initMapforSurprise() {
+    var broadway = {
+        info:
+            '<strong>Chipotle on Broadway</strong><br>\
+          5224 N Broadway St<br> Chicago, IL 60640<br>\
+          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+        lat: 41.976816,
+        long: -87.659916,
+    }
+
+    var belmont = {
+        info:
+            '<strong>Chipotle on Belmont</strong><br>\
+          1025 W Belmont Ave<br> Chicago, IL 60657<br>\
+          <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
+        lat: 41.93967,
+        long: -87.655167,
+    }
+
+    var sheridan = {
+        info:
+            '<strong>Chipotle on Sheridan</strong><br>\r\
+          6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
+          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+        lat: 42.002707,
+        long: -87.661236,
+    }
+
+    var locations = [
+        [broadway.info, broadway.lat, broadway.long, 0],
+        [belmont.info, belmont.lat, belmont.long, 1],
+        [sheridan.info, sheridan.lat, sheridan.long, 2],
+    ]
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: new google.maps.LatLng(41.976816, -87.659916),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+    })
+
+    var infowindow = new google.maps.InfoWindow({})
+
+    var marker, i
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map,
+        })
+
+        google.maps.event.addListener(
+            marker,
+            'click',
+            (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0])
+                    infowindow.open(map, marker)
+                }
+            })(marker, i)
+        )
+    }
+}
+
+//Fear
+
+function initMapforFear() {
+    var broadway = {
+        info:
+            '<strong>Chipotle on Broadway</strong><br>\
+          5224 N Broadway St<br> Chicago, IL 60640<br>\
+          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+        lat: 41.976816,
+        long: -87.659916,
+    }
+
+    var belmont = {
+        info:
+            '<strong>Chipotle on Belmont</strong><br>\
+          1025 W Belmont Ave<br> Chicago, IL 60657<br>\
+          <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
+        lat: 41.93967,
+        long: -87.655167,
+    }
+
+    var sheridan = {
+        info:
+            '<strong>Chipotle on Sheridan</strong><br>\r\
+          6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
+          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+        lat: 42.002707,
+        long: -87.661236,
+    }
+
+    var locations = [
+        [broadway.info, broadway.lat, broadway.long, 0],
+        [belmont.info, belmont.lat, belmont.long, 1],
+        [sheridan.info, sheridan.lat, sheridan.long, 2],
+    ]
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: new google.maps.LatLng(41.976816, -87.659916),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+    })
+
+    var infowindow = new google.maps.InfoWindow({})
+
+    var marker, i
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map,
+        })
+
+        google.maps.event.addListener(
+            marker,
+            'click',
+            (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0])
+                    infowindow.open(map, marker)
+                }
+            })(marker, i)
+        )
+    }
+}
+
+
+//Fear
+
+function initMapforFear() {
+    var broadway = {
+        info:
+            '<strong>Chipotle on Broadway</strong><br>\
+          5224 N Broadway St<br> Chicago, IL 60640<br>\
+          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+        lat: 41.976816,
+        long: -87.659916,
+    }
+
+    var belmont = {
+        info:
+            '<strong>Chipotle on Belmont</strong><br>\
+          1025 W Belmont Ave<br> Chicago, IL 60657<br>\
+          <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
+        lat: 41.93967,
+        long: -87.655167,
+    }
+
+    var sheridan = {
+        info:
+            '<strong>Chipotle on Sheridan</strong><br>\r\
+          6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
+          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+        lat: 42.002707,
+        long: -87.661236,
+    }
+
+    var locations = [
+        [broadway.info, broadway.lat, broadway.long, 0],
+        [belmont.info, belmont.lat, belmont.long, 1],
+        [sheridan.info, sheridan.lat, sheridan.long, 2],
+    ]
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: new google.maps.LatLng(41.976816, -87.659916),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+    })
+
+    var infowindow = new google.maps.InfoWindow({})
+
+    var marker, i
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map,
+        })
+
+        google.maps.event.addListener(
+            marker,
+            'click',
+            (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0])
+                    infowindow.open(map, marker)
+                }
+            })(marker, i)
+        )
+    }
+}
+
+
