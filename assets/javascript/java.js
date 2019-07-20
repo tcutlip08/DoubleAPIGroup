@@ -32,7 +32,6 @@
 //     }
 // });
 
-<<<<<<< HEAD
 
 // $(".urlSubmit").on("click", function () {
 //     // console.log($("#inputImage").val().trim());
@@ -116,7 +115,6 @@ $(".btn").on("click", function () {
     $("#first-page-hide").hide();
 
     $("#onclick-show").show();
-=======
 $(".pickImage").on("click", function () {
 
     var imgSrc = {
@@ -183,7 +181,6 @@ $(".pickImage").on("click", function () {
                 console.log(currentEmotion);
             });
         });
->>>>>>> cbb0d8f5392efaf657acd6a13293348420f0ea0a
 });
 
 function findCurrentEmotion(allEmo) {
@@ -727,6 +724,5 @@ function initMapforFear() {
             })(marker, i)
         )
     }
-}
-
+};
 
