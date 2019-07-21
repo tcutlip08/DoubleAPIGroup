@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 /* #liveVideo{
     text-align: center;
     border-style: solid, thick, #ddd;
 } */
+=======
+
+#header{
+    border-radius: 7px;
+    align-content: center;
+};
+>>>>>>> 7c92046126eb45e3d100fbbcdb9439a3340ee92e
 
 .header-container{
     background-color: deepskyblue;
@@ -22,6 +30,7 @@
     margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .button-section img{
     /* width: 60px; */
     height: 75px;
@@ -45,3 +54,16 @@
 #options-cards{
 color: aliceblue;
 };
+=======
+.booth{
+    width: 400px;
+    background-color: #ccc;
+    border: 10px solid #ddd;
+    margin: 0 auto;
+}
+/* #liveVideo{
+    text-align: center;
+    border-style: solid, thick, #ddd;
+} */
+
+>>>>>>> 7c92046126eb45e3d100fbbcdb9439a3340ee92e
