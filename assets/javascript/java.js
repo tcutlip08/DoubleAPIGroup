@@ -110,11 +110,15 @@
 // });
 
 $("#onclick-show").hide();
-
-$(".btn").on("click", function () {
+$(".pickImage").on("click", function () {
     $("#first-page-hide").hide();
-
     $("#onclick-show").show();
+});
+$("#reset-btn").on("click", function () {
+    $("#onclick-show").hide();
+    $("#first-page-hide").show();
+});
+
 $(".pickImage").on("click", function () {
 
     var imgSrc = {
@@ -124,7 +128,7 @@ $(".pickImage").on("click", function () {
         praveen: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Praveen.jpg?raw=true",
         jonathan: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Jonathan.png?raw=true",
         notAsBaldBlackDude: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/NotAsBaldBlackDude.png?raw=true"
-    }
+    };
     var chosenImgUrl;
 
     // $("#canvas").attr("width", "400");
@@ -150,7 +154,7 @@ $(".pickImage").on("click", function () {
         chosenImgUrl = imgSrc.baldWhiteDude;
     } else if ($(this).attr("id") === "notAsBaldBlackDude") {
         chosenImgUrl = imgSrc.notAsBaldBlackDude;
-    } 
+    }
 
     var urlFaceToken = "https://api-us.faceplusplus.com/facepp/v3/detect"
     var api_Key = "api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF"
@@ -198,25 +202,25 @@ function findCurrentEmotion(allEmo) {
     var allEmotions = [anger, fear, disgust, happiness, neutral, sadness, surprise];
 
     var currentEmotion = 0;
-    for (let i = 0; i < allEmotions.length; i++){
-        if (currentEmotion < allEmotions[i]){
+    for (let i = 0; i < allEmotions.length; i++) {
+        if (currentEmotion < allEmotions[i]) {
             currentEmotion = allEmotions[i];
         }
     }
 
-    if(currentEmotion === anger){
+    if (currentEmotion === anger) {
         return "anger";
-    } else if (currentEmotion === fear){
+    } else if (currentEmotion === fear) {
         return "fear";
-    } else if (currentEmotion === disgust){
+    } else if (currentEmotion === disgust) {
         return "disgust";
-    } else if (currentEmotion === happiness){
+    } else if (currentEmotion === happiness) {
         return "happiness";
-    } else if (currentEmotion === neutral){
+    } else if (currentEmotion === neutral) {
         return "neutral";
-    } else if (currentEmotion === sadness){
+    } else if (currentEmotion === sadness) {
         return "sadness";
-    } else if (currentEmotion === surprise){
+    } else if (currentEmotion === surprise) {
         return "surprise";
     } else {
         console.log("No returned emotion")
