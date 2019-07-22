@@ -1,15 +1,12 @@
-<<<<<<< HEAD
 /* #liveVideo{
     text-align: center;
     border-style: solid, thick, #ddd;
 } */
-=======
 
-#header{
+/* #header{
     border-radius: 7px;
     align-content: center;
-};
->>>>>>> 7c92046126eb45e3d100fbbcdb9439a3340ee92e
+}; */
 
 .header-container{
     background-color: deepskyblue;
