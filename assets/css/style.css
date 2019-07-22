@@ -12,6 +12,11 @@
     border-style: solid, thick, #ddd;
 } */
 
+/* #header{
+    border-radius: 7px;
+    align-content: center;
+}; */
+
 .header-container{
     background-color: deepskyblue;
     color: white;
@@ -30,6 +35,11 @@
     padding: 10px;
     margin-bottom: 10px;
 }
+
+.button-section img{
+    /* width: 60px; */
+    height: 75px;
+}
 .jumbo-tron{
     width: 80%;
     height: 50px;
@@ -45,6 +55,7 @@
     left:0;
     right:0;
     margin:auto;
+<<<<<<< HEAD
 }
 
 #map {
@@ -53,3 +64,9 @@
     margin-top:250px;
     margin-left:400px;
 }
+=======
+        }
+#options-cards{
+color: aliceblue;
+};
+>>>>>>> e9fd578de423977689e4acaf84a527a930c4ca3f
