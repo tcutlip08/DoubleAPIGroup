@@ -1,3 +1,12 @@
+.body{
+    box-sizing: border-box;
+}
+.booth{
+    width: 400px;
+    background-color: #ccc;
+    border: 10px solid #ddd;
+    margin: 0 auto;
+}
 /* #liveVideo{
     text-align: center;
     border-style: solid, thick, #ddd;
@@ -27,7 +36,7 @@
     margin:auto;
 }
 
-#map { 
+#googleMap { 
     height: 25%;
     width:80%;
     position:absolute;
@@ -36,4 +45,11 @@
     left:0;
     right:0;
     margin:auto;
-        }
+}
+
+#map {
+    height: 300px;
+    width: 400px;
+    margin-top:250px;
+    margin-left:400px;
+}
