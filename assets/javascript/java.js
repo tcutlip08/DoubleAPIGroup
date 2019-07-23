@@ -140,7 +140,7 @@ function findCurrentEmotion(allEmo) {
     }
 }
 
-const config = {
+/* const config = {
     apiKey: "AIzaSyCDU6rYUeS3vBdWWsfuZGJQu07AHLGU7kU",
     authDomain: "doubleapigroup-5d285.firebaseapp.com",
     databaseURL: "https://doubleapigroup-5d285.firebaseio.com",
@@ -154,7 +154,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 const storageService = firebase.storage();
-const storageRef = storageService.ref();
+const storageRef = storageService.ref(); */
 
 // document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
 // $(".file-select").on("change", handleFileUploadChange);
@@ -185,7 +185,7 @@ const storageRef = storageService.ref();
 ////////////!!Face++ Testing!!/////////
 ///////////////////////////////////////
 
-var broadway = {
+/* var broadway = {
     info:
         '<strong>Chipotle on Broadway</strong><br>\
             5224 N Broadway St<br> Chicago, IL 60640<br>\
@@ -210,7 +210,7 @@ var sheridan = {
             <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
     lat: 42.002707,
     long: -87.661236,
-}
+} */
 
 //   var locations = {
 //     broadway: {info: '<strong>Chipotle on Belmont</strong><br>\ 1025 W Belmont Ave<br> Chicago, IL 60657<br>\ <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>'}
