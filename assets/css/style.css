@@ -8,17 +8,23 @@
     align-content: center;
 }; */
 
-.header-container{
+.container {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.header-container {
     background-color: deepskyblue;
     color: white;
     height: 80px;
     font-size: 36px;
+    font-family: 'Russo One', sans-serif;
     text-align: center;
     margin: auto;
     padding: 10px;
     margin-bottom: 10px;
 }
-.button-section{
+
+.button-section {
     height: 80px;
     font-size: 36px;
     text-align: center;
@@ -27,26 +33,28 @@
     margin-bottom: 10px;
 }
 
-.button-section img{
+.button-section img {
     /* width: 60px; */
-    height: 75px;
-}
-.jumbo-tron{
-    width: 80%;
-    height: 50px;
-    margin:auto;
+    height: 80px;
 }
 
-#map { 
+.jumbo-tron {
+    width: 80%;
+    height: 50px;
+    margin: auto;
+}
+
+#map {
     height: 25%;
-    width:80%;
-    position:absolute;
-    top:30;
-    bottom:0;
-    left:0;
-    right:0;
-    margin:auto;
-        }
-#options-cards{
-color: aliceblue;
-};
+    width: 80%;
+    position: absolute;
+    top: 30;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#options-cards {
+    color: aliceblue;
+}
