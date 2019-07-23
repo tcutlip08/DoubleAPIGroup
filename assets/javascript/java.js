@@ -123,13 +123,13 @@ $("#reset-btn").on("click", function () {
 $(".pickImage").on("click", function () {
 
     var imgSrc = {
-        fear: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Nate.jpg?raw=true",
+        fear: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/FearFace.jpg?raw=true",
         disgust: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/BaldWhiteDude.jpg?raw=true",
-        surprise: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Aaron.JPG?raw=true",
         neutral: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Praveen.jpg?raw=true",
         happy: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Jonathan.png?raw=true",
-        fear: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/NotAsBaldBlackDude.png?raw=true",
-        sad: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Nate.jpg?raw=true"
+        surprise: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/SurpriseFace.jpg?raw=true",
+        sad: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/SadKid.jpg?raw=true",
+        angry: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/AngryFace.jpg?raw=true"
     };
     var chosenImgUrl;
 
@@ -153,20 +153,20 @@ $(".pickImage").on("click", function () {
     // fear
     // happiness
 
-    if ($(this).attr("id") === "") {
-        chosenImgUrl = imgSrc.nate; // happy
-    } else if ($(this).attr("id") === "praveen") {
-        chosenImgUrl = imgSrc.praveen; // nuetral
-    } else if ($(this).attr("id") === "aaron") {
-        chosenImgUrl = imgSrc.aaron; // happy
-    } else if ($(this).attr("id") === "jonathan") {
-        chosenImgUrl = imgSrc.jonathan; // happy
-    } else if ($(this).attr("id") === "baldWhiteDude") {
-        chosenImgUrl = imgSrc.baldWhiteDude; // disgust
-    } else if ($(this).attr("id") === "notAsBaldBlackDude") {
-        chosenImgUrl = imgSrc.notAsBaldBlackDude; // disgust
-    } else if ($(this).attr("id") === "notAsBaldBlackDude") {
-        chosenImgUrl = imgSrc.notAsBaldBlackDude; // disgust
+    if ($(this).attr("id") === "fear") {
+        chosenImgUrl = imgSrc.fear;
+    } else if ($(this).attr("id") === "neutral") {
+        chosenImgUrl = imgSrc.neutral;
+    } else if ($(this).attr("id") === "angry") {
+        chosenImgUrl = imgSrc.angry;
+    } else if ($(this).attr("id") === "happy") {
+        chosenImgUrl = imgSrc.happy;
+    } else if ($(this).attr("id") === "disgust") {
+        chosenImgUrl = imgSrc.disgust;
+    } else if ($(this).attr("id") === "sad") {
+        chosenImgUrl = imgSrc.sad;
+    } else if ($(this).attr("id") === "surprise") {
+        chosenImgUrl = imgSrc.surprise;
     }
 
     var urlFaceToken = "https://api-us.faceplusplus.com/facepp/v3/detect"
