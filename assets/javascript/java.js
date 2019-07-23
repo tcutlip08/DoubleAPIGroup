@@ -32,6 +32,9 @@
 //     }
 // });
 
+$(".pickImage").on("click", function () {
+// $(".submitButton").on("click", function (event) {
+    // event.preventDefault();
 
 // $(".urlSubmit").on("click", function () {
 //     // console.log($("#inputImage").val().trim());
@@ -48,66 +51,64 @@
 
 //     // context.drawImage(video, 0, 0, 400, 300);
 
-//     var url = "https://api-us.faceplusplus.com/facepp/v3/detect"
-//     var api_Key = "api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF"
-//     var api_Secret = "api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
-//     // var photoToSearch = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-//     // var photo = $("#inputImage").val().trim();
-//     var photo = "https://github.com/tcutlip08/Bootstrap-Portfolio/blob/master/assets/images/Self%20Pic.jpg?raw=true";
-//     var returnAttributes = "return_attributes=emotion"
-//     var queryURL = url + "?" + api_Key + "&image_url=" + photo + "&" + api_Secret;
-//     var test = "https://api-us.faceplusplus.com/facepp/v3/detect?api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF&image_url=https://scontent-mia3-1.xx.fbcdn.net/v/t1.0-9/1378013_10151972987408140_1875540956_n.jpg?_nc_cat=111%26_nc_oc=AQnHUVuAOilpaa4UUrRIuNQU_0A7LIuzJInRpApI_po3Tz26B5puXXvxhLkfrgEU80k%26_nc_ht=scontent-mia3-1.xx%26oh=412bd753fb2dbed927667b95fd6432ce%26oe=5DE5B805&api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
+    var url = "https://api-us.faceplusplus.com/facepp/v3/detect"
+    var api_Key = "api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF"
+    var api_Secret = "api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
+    // var photoToSearch = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    // var photo = $("#inputImage").val().trim();
+    var photo = "https://github.com/tcutlip08/Bootstrap-Portfolio/blob/master/assets/images/Self%20Pic.jpg?raw=true";
+    var returnAttributes = "return_attributes=emotion"
+    var queryURL = url + "?" + api_Key + "&image_url=" + photo + "&" + api_Secret;
 
-//     console.log(queryURL);
-//     console.log(test);
-//     $.ajax({
-//         url: queryURL,
-//         method: "POST"
-//     })
-//         .then(function (response) {
-//             console.log(response);
-//             // var results = response.data;
-//             // console.log(results);
+    // console.log(queryURL);
+    $.ajax({
+        url: queryURL,
+        method: "POST"
+    })
+        .then(function (response) {
+            console.log(response);
+            // var results = response.data;
+            // console.log(results);
 
-//             // for (var i = 0; i < results.length; i++) {
+            // for (var i = 0; i < results.length; i++) {
 
-//             //     var gifDiv = $("<div>");
-//             //     gifDiv.addClass("card w-75 text-center");
+            //     var gifDiv = $("<div>");
+            //     gifDiv.addClass("card w-75 text-center");
 
-//             //     var rating = results[i].rating;
+            //     var rating = results[i].rating;
 
-//             //     var p = $("<h5>").html("Rating: " + rating);
+            //     var p = $("<h5>").html("Rating: " + rating);
 
-//             //     var gifImage = $("<img>");
-//             //     gifImage.addClass("gif");
-//             //     gifImage.attr("src", results[i].images.fixed_width_still.url);
-//             //     gifImage.attr("data-still", results[i].images.fixed_width_still.url);
-//             //     gifImage.attr("data-animate", results[i].images.fixed_width.url);
-//             //     gifImage.attr("data-state", "still");
-//             //     gifImage.attr("style", "padding: 10px");
+            //     var gifImage = $("<img>");
+            //     gifImage.addClass("gif");
+            //     gifImage.attr("src", results[i].images.fixed_width_still.url);
+            //     gifImage.attr("data-still", results[i].images.fixed_width_still.url);
+            //     gifImage.attr("data-animate", results[i].images.fixed_width.url);
+            //     gifImage.attr("data-state", "still");
+            //     gifImage.attr("style", "padding: 10px");
 
-//             //     var imageTitle = $("<h4>");
-//             //     imageTitle.addClass("gifTitle");
-//             //     var title = (results[i].title.split(" GIF"));
-//             //     imageTitle.html(title[0].toUpperCase());
+            //     var imageTitle = $("<h4>");
+            //     imageTitle.addClass("gifTitle");
+            //     var title = (results[i].title.split(" GIF"));
+            //     imageTitle.html(title[0].toUpperCase());
 
-//             //     var imageDetail = $("<div>");
-//             //     imageDetail.addClass("imageDetail");
-//             //     imageDetail.append(imageTitle);
+            //     var imageDetail = $("<div>");
+            //     imageDetail.addClass("imageDetail");
+            //     imageDetail.append(imageTitle);
 
-//             //     var favButton = $("<button>");
-//             //     favButton.addClass("btn btn-primary").attr("id", "favBtn").text("✩Favorites");
+            //     var favButton = $("<button>");
+            //     favButton.addClass("btn btn-primary").attr("id", "favBtn").text("✩Favorites");
 
-//             //     gifDiv.prepend(favButton);
-//             //     gifDiv.prepend(p);
-//             //     gifDiv.prepend(imageDetail);
-//             //     gifDiv.prepend(gifImage);
+            //     gifDiv.prepend(favButton);
+            //     gifDiv.prepend(p);
+            //     gifDiv.prepend(imageDetail);
+            //     gifDiv.prepend(gifImage);
 
-//             //     $("#displayGifs").prepend("<br>")
-//             //     $("#displayGifs").prepend(gifDiv);
-//             // }
-//         });
-// });
+            //     $("#displayGifs").prepend("<br>")
+            //     $("#displayGifs").prepend(gifDiv);
+            // }
+        });
+});
 
 $("#onclick-show").hide();
 $(".pickImage").on("click", function () {
@@ -122,12 +123,13 @@ $("#reset-btn").on("click", function () {
 $(".pickImage").on("click", function () {
 
     var imgSrc = {
-        nate: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Nate.jpg?raw=true",
-        baldWhiteDude: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/BaldWhiteDude.jpg?raw=true",
-        aaron: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Aaron.JPG?raw=true",
-        praveen: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Praveen.jpg?raw=true",
-        jonathan: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Jonathan.png?raw=true",
-        notAsBaldBlackDude: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/NotAsBaldBlackDude.png?raw=true"
+        fear: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/FearFace.jpg?raw=true",
+        disgust: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/BaldWhiteDude.jpg?raw=true",
+        neutral: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Praveen.jpg?raw=true",
+        happy: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Jonathan.png?raw=true",
+        surprise: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/SurpriseFace.jpg?raw=true",
+        sad: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/SadKid.jpg?raw=true",
+        angry: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/AngryFace.jpg?raw=true"
     };
     var chosenImgUrl;
 
@@ -142,36 +144,48 @@ $(".pickImage").on("click", function () {
     // console.log(video);
 
     // context.drawImage(video, 0, 0, 400, 300);
-    if ($(this).attr("id") === "nate") {
-        chosenImgUrl = imgSrc.nate;
-    } else if ($(this).attr("id") === "praveen") {
-        chosenImgUrl = imgSrc.praveen;
-    } else if ($(this).attr("id") === "aaron") {
-        chosenImgUrl = imgSrc.aaron;
-    } else if ($(this).attr("id") === "jonathan") {
-        chosenImgUrl = imgSrc.jonathan;
-    } else if ($(this).attr("id") === "baldWhiteDude") {
-        chosenImgUrl = imgSrc.baldWhiteDude;
-    } else if ($(this).attr("id") === "notAsBaldBlackDude") {
-        chosenImgUrl = imgSrc.notAsBaldBlackDude;
+
+    // sadness
+    // neutral
+    // disgust
+    // anger
+    // surprise
+    // fear
+    // happiness
+
+    if ($(this).attr("id") === "fear") {
+        chosenImgUrl = imgSrc.fear;
+    } else if ($(this).attr("id") === "neutral") {
+        chosenImgUrl = imgSrc.neutral;
+    } else if ($(this).attr("id") === "angry") {
+        chosenImgUrl = imgSrc.angry;
+    } else if ($(this).attr("id") === "happy") {
+        chosenImgUrl = imgSrc.happy;
+    } else if ($(this).attr("id") === "disgust") {
+        chosenImgUrl = imgSrc.disgust;
+    } else if ($(this).attr("id") === "sad") {
+        chosenImgUrl = imgSrc.sad;
+    } else if ($(this).attr("id") === "surprise") {
+        chosenImgUrl = imgSrc.surprise;
     }
 
     var urlFaceToken = "https://api-us.faceplusplus.com/facepp/v3/detect"
     var api_Key = "api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF"
     var api_Secret = "api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
     var photo = chosenImgUrl;
+    // var photo = $(".submitImage").val().trim();
     var queryURL = urlFaceToken + "?" + api_Key + "&image_url=" + photo + "&" + api_Secret;
 
-    console.log(queryURL);
+    // console.log(queryURL);
     $.ajax({
         url: queryURL,
         method: "POST"
     })
         .then(function (response) {
-            console.log(response);
+            // console.log(response);
             var result = response.faces;
 
-            console.log(result[0].face_token);
+            // console.log(result[0].face_token);
 
             var urlEmotions = "https://api-us.faceplusplus.com/facepp/v3/detect"
             var returnAttributes = "return_attributes=emotion"
@@ -188,8 +202,6 @@ $(".pickImage").on("click", function () {
 });
 
 function findCurrentEmotion(allEmo) {
-    console.log("Find Emotion Function!!");
-    console.log(allEmo);
 
     var anger = allEmo.anger;
     var fear = allEmo.fear;
@@ -227,21 +239,21 @@ function findCurrentEmotion(allEmo) {
     }
 }
 
-const config = {
-    apiKey: "AIzaSyCDU6rYUeS3vBdWWsfuZGJQu07AHLGU7kU",
-    authDomain: "doubleapigroup-5d285.firebaseapp.com",
-    databaseURL: "https://doubleapigroup-5d285.firebaseio.com",
-    projectId: "doubleapigroup-5d285",
-    storageBucket: "doubleapigroup-5d285.appspot.com",
-    messagingSenderId: "518885986314",
-    appId: "1:518885986314:web:7767e302d24f7613"
-};
+// const config = {
+//     apiKey: "AIzaSyCDU6rYUeS3vBdWWsfuZGJQu07AHLGU7kU",
+//     authDomain: "doubleapigroup-5d285.firebaseapp.com",
+//     databaseURL: "https://doubleapigroup-5d285.firebaseio.com",
+//     projectId: "doubleapigroup-5d285",
+//     storageBucket: "doubleapigroup-5d285.appspot.com",
+//     messagingSenderId: "518885986314",
+//     appId: "1:518885986314:web:7767e302d24f7613"
+// };
 
-firebase.initializeApp(config);
-var database = firebase.database();
+// firebase.initializeApp(config);
+// var database = firebase.database();
 
-const storageService = firebase.storage();
-const storageRef = storageService.ref();
+// const storageService = firebase.storage();
+// const storageRef = storageService.ref();
 
 // document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
 // $(".file-select").on("change", handleFileUploadChange);
