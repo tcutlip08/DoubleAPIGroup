@@ -47,23 +47,27 @@
                 </div>
             </div>
         </div>
+        <!-- <div>
+            <form enctype="multipart/form-data">
+                <strong>Upload file:</strong>
+                <input type="file" id="uploadPicture" />
+                <input type="submit" id="submitPicture" value="Submit" />
+            </form>
+        </div> -->
+
+        <!-- <input type="file" onchange="previewFile()"><br>
+            <img src="" height="200" alt="Image preview..."> -->
+
+        <div class="button-section">
+            <a type="button" class="pickImage" id="angry"><img src="assets/images/AngryFace.jpg"></a>
+            <a type="button" class="pickImage" id="neutral"><img src="assets/images/Praveen.jpg"></a>
+            <a type="button" class="pickImage" id="fear"><img src="assets/images/FearFace.jpg"></a>
+            <a type="button" class="pickImage" id="disgust"><img src="assets/images/BaldWhiteDude.jpg"></a>
+            <a type="button" class="pickImage" id="happy"><img src="assets/images/Jonathan.png"></a>
+            <a type="button" class="pickImage" id="sad"><img src="assets/images/SadKid.jpg"></a>
+            <a type="button" class="pickImage" id="surprise"><img src="assets/images/SurpriseFace.jpg"></a>
+        </div>
         <div id="first-page-hide">
-            <div class="button-section">
-                <!-- <button type="button" class="btn btn-primary" id="sadness-button" onclick="initMapforSadness()">Sadness</button> -->
-                <a type="button" class="pickImage" id="angry"><img src="assets/images/AngryFace.jpg"></a>
-                <!-- <button type="button" class="btn btn-primary" id="neutral-button" onclick="initMapforNeutral()">Neutral</button> -->
-                <a type="button" class="pickImage" id="neutral"><img src="assets/images/Praveen.jpg"></a>
-                <!-- <button type="button" class="btn btn-primary" id="disgust-button" onclick="initMapforDisgust()">Disgust</button> -->
-                <a type="button" class="pickImage" id="fear"><img src="assets/images/FearFace.jpg"></a>
-                <!-- <button type="button" class="btn btn-primary" id="anger-button" onclick="initMapforAnger()">Anger</button> -->
-                <a type="button" class="pickImage" id="disgust"><img src="assets/images/BaldWhiteDude.jpg"></a>
-                <!-- <button type="button" class="btn btn-primary" id="surprise-button" onclick="initMapforSurprise()">Surprise</button> -->
-                <a type="button" class="pickImage" id="happy"><img src="assets/images/Jonathan.png"></a>
-                <!-- <button type="button" class="btn btn-primary" id="fear-button" onclick="initMapforFear()">Fear</button> -->
-                <a type="button" class="pickImage" id="sad"><img src="assets/images/SadKid.jpg"></a>
-                <!-- <button type="button" class="btn btn-primary" id="happiness-button" onclick="initMapforHappiness()">Happiness</button> -->
-                <a type="button" class="pickImage" id="surprise"><img src="assets/images/SurpriseFace.jpg"></a>
-            </div>
             <div class="jumbo-tron">
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
@@ -87,8 +91,7 @@
             <div class="row">
                 <div class="col">
                     <div class="output">
-                        <canvas id="canvas">
-                        </canvas>
+                        <canvas id="canvas"></canvas>
                         <div id="map"></div>
                     </div>
                 </div>
@@ -100,7 +103,6 @@
 
             <div id="map"></div>
             <div id="googleMap"></div>
-
         </div>
 
         <div id="onclick-show">
@@ -117,71 +119,64 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="card text-white bg-secondary mb-3">
-                                            <div class="card-header">Header</div>
+                                        <div class="card" id="card1" style="width: 18rem;">
+                                            <img src="assets/images/Jonathan.png" class="card-img-top">
                                             <div class="card-body">
-                                                <h5 class="card-title">Secondary card title</h5>
+                                                <h5 class="card-title">Card title</h5>
                                                 <p class="card-text">Some quick example text to build on the card title
-                                                    and
-                                                    make
-                                                    up the bulk of the card's content.</p>
+                                                    and make up the bulk of the card's content.</p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <div class="card text-white bg-secondary mb-3">
-                                            <div class="card-header">Header</div>
+                                            <div class="card" id="card2" style="width: 18rem;">
+                                                    <img src="assets/images/Jonathan.png" class="card-img-top">
                                             <div class="card-body">
-                                                <h5 class="card-title">Secondary card title</h5>
+                                                <h5 class="card-title">Card title</h5>
                                                 <p class="card-text">Some quick example text to build on the card title
-                                                    and
-                                                    make
-                                                    up the bulk of the card's content.</p>
+                                                    and make up the bulk of the card's content.</p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <div class="card text-white bg-secondary mb-3">
-                                            <div class="card-header">Header</div>
+                                            <div class="card" id="card3" style="width: 18rem;">
+                                                    <img src="assets/images/Jonathan.png" class="card-img-top">
                                             <div class="card-body">
-                                                <h5 class="card-title">Secondary card title</h5>
+                                                <h5 class="card-title">Card title</h5>
                                                 <p class="card-text">Some quick example text to build on the card title
-                                                    and
-                                                    make
-                                                    up the bulk of the card's content.</p>
+                                                    and make up the bulk of the card's content.</p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <div class="card text-white bg-secondary mb-3">
-                                            <div class="card-header">Header</div>
+                                            <div class="card" id="card4" style="width: 18rem;">
+                                                    <img src="assets/images/Jonathan.png" class="card-img-top">
                                             <div class="card-body">
-                                                <h5 class="card-title">Secondary card title</h5>
+                                                <h5 class="card-title">Card title</h5>
                                                 <p class="card-text">Some quick example text to build on the card title
-                                                    and
-                                                    make
-                                                    up the bulk of the card's content.</p>
+                                                    and make up the bulk of the card's content.</p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer text-muted"></div>
                         </div>
+                        <div class="card-footer text-muted"></div>
             </div>
-            <div id="map"></div>
-            <div id="googleMap"></div>
         </div>
+    </div>
 
 
-
-
-        <div id="map"></div>
-        <div id="googleMap"></div>
-        <script type='text/javascript' src='assets/javascript/java.js'></script>
+    <div id="map"></div>
+    <div id="googleMap"></div>
+    <script type='text/javascript' src='assets/javascript/java.js'></script>
 </body>
 
 </html>
