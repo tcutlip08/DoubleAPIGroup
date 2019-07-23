@@ -33,15 +33,104 @@
 // });
 
 $(".pickImage").on("click", function () {
+    // $(".submitButton").on("click", function (event) {
+    // event.preventDefault();
+
+    // $(".urlSubmit").on("click", function () {
+    //     // console.log($("#inputImage").val().trim());
+
+    //     // $("#canvas").attr("width", "400");
+    //     // $("#canvas").attr("height", "300");
+    //     // var canvas = document.getElementById('canvas');
+    //     // var context = canvas.getContext('2d');
+    //     // var video = document.getElementById('liveVideo');
+
+    //     // console.log(canvas);
+    //     // console.log(context);
+    //     // console.log(video);
+
+    //     // context.drawImage(video, 0, 0, 400, 300);
+
+    var url = "https://api-us.faceplusplus.com/facepp/v3/detect"
+    var api_Key = "api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF"
+    var api_Secret = "api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
+    // var photoToSearch = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    // var photo = $("#inputImage").val().trim();
+    var photo = "https://github.com/tcutlip08/Bootstrap-Portfolio/blob/master/assets/images/Self%20Pic.jpg?raw=true";
+    var returnAttributes = "return_attributes=emotion"
+    var queryURL = url + "?" + api_Key + "&image_url=" + photo + "&" + api_Secret;
+
+    // console.log(queryURL);
+    $.ajax({
+        url: queryURL,
+        method: "POST"
+    })
+        .then(function (response) {
+            console.log(response);
+            // var results = response.data;
+            // console.log(results);
+
+            // for (var i = 0; i < results.length; i++) {
+
+            //     var gifDiv = $("<div>");
+            //     gifDiv.addClass("card w-75 text-center");
+
+            //     var rating = results[i].rating;
+
+            //     var p = $("<h5>").html("Rating: " + rating);
+
+            //     var gifImage = $("<img>");
+            //     gifImage.addClass("gif");
+            //     gifImage.attr("src", results[i].images.fixed_width_still.url);
+            //     gifImage.attr("data-still", results[i].images.fixed_width_still.url);
+            //     gifImage.attr("data-animate", results[i].images.fixed_width.url);
+            //     gifImage.attr("data-state", "still");
+            //     gifImage.attr("style", "padding: 10px");
+
+            //     var imageTitle = $("<h4>");
+            //     imageTitle.addClass("gifTitle");
+            //     var title = (results[i].title.split(" GIF"));
+            //     imageTitle.html(title[0].toUpperCase());
+
+            //     var imageDetail = $("<div>");
+            //     imageDetail.addClass("imageDetail");
+            //     imageDetail.append(imageTitle);
+
+            //     var favButton = $("<button>");
+            //     favButton.addClass("btn btn-primary").attr("id", "favBtn").text("✩Favorites");
+
+            //     gifDiv.prepend(favButton);
+            //     gifDiv.prepend(p);
+            //     gifDiv.prepend(imageDetail);
+            //     gifDiv.prepend(gifImage);
+
+            //     $("#displayGifs").prepend("<br>")
+            //     $("#displayGifs").prepend(gifDiv);
+            // }
+        });
+});
+
+$("#onclick-show").hide();
+$(".pickImage").on("click", function () {
+    $("#first-page-hide").hide();
+    $("#onclick-show").show();
+});
+$("#reset-btn").on("click", function () {
+    $("#onclick-show").hide();
+    $("#first-page-hide").show();
+});
+
+$(".pickImage").on("click", function () {
 
     var imgSrc = {
-        nate: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Nate.jpg?raw=true",
-        baldWhiteDude: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/BaldWhiteDude.jpg?raw=true",
-        aaron: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Aaron.JPG?raw=true",
-        praveen: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Praveen.jpg?raw=true",
-        jonathan: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Jonathan.png?raw=true",
-        notAsBaldBlackDude: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/NotAsBaldBlackDude.png?raw=true"
-    }
+        fear: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/FearFace.jpg?raw=true",
+        disgust: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/BaldWhiteDude.jpg?raw=true",
+        neutral: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Praveen.jpg?raw=true",
+        happy: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/Jonathan.png?raw=true",
+        surprise: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/SurpriseFace.jpg?raw=true",
+        sad: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/SadKid.jpg?raw=true",
+        angry: "https://github.com/tcutlip08/DoubleAPIGroup/blob/master/assets/images/AngryFace.jpg?raw=true"
+    };
     var chosenImgUrl;
 
     // $("#canvas").attr("width", "400");
@@ -55,36 +144,55 @@ $(".pickImage").on("click", function () {
     // console.log(video);
 
     // context.drawImage(video, 0, 0, 400, 300);
-    if ($(this).attr("id") === "nate") {
-        chosenImgUrl = imgSrc.nate;
-    } else if ($(this).attr("id") === "praveen") {
-        chosenImgUrl = imgSrc.praveen;
-    } else if ($(this).attr("id") === "aaron") {
-        chosenImgUrl = imgSrc.aaron;
-    } else if ($(this).attr("id") === "jonathan") {
-        chosenImgUrl = imgSrc.jonathan;
-    } else if ($(this).attr("id") === "baldWhiteDude") {
-        chosenImgUrl = imgSrc.baldWhiteDude;
-    } else if ($(this).attr("id") === "notAsBaldBlackDude") {
-        chosenImgUrl = imgSrc.notAsBaldBlackDude;
-    } 
+
+    // sadness
+    // neutral
+    // disgust
+    // anger
+    // surprise
+    // fear
+    // happiness
+
+    if ($(this).attr("id") === "fear") {
+        chosenImgUrl = imgSrc.fear;
+        $(".badge-secondary").text("Emotion: Fear");
+    } else if ($(this).attr("id") === "neutral") {
+        chosenImgUrl = imgSrc.neutral;
+        $(".badge-secondary").text("Emotion: Neutral");
+    } else if ($(this).attr("id") === "angry") {
+        chosenImgUrl = imgSrc.angry;
+        $(".badge-secondary").text("Emotion: Angry");
+    } else if ($(this).attr("id") === "happy") {
+        chosenImgUrl = imgSrc.happy;
+        $(".badge-secondary").text("Emotion: Happy");
+    } else if ($(this).attr("id") === "disgust") {
+        chosenImgUrl = imgSrc.disgust;
+        $(".badge-secondary").text("Emotion: Disgust");
+    } else if ($(this).attr("id") === "sad") {
+        chosenImgUrl = imgSrc.sad;
+        $(".badge-secondary").text("Emotion: Sad");
+    } else if ($(this).attr("id") === "surprise") {
+        chosenImgUrl = imgSrc.surprise;
+        $(".badge-secondary").text("Emotion: Surprise");
+    }
 
     var urlFaceToken = "https://api-us.faceplusplus.com/facepp/v3/detect"
     var api_Key = "api_key=SGDsWC-LfRIlK-6AapwjGbUDWcHOR1gF"
     var api_Secret = "api_secret=FLbaJQnABWlZEuXnxh16n-pgalV760vm"
     var photo = chosenImgUrl;
+    // var photo = $(".submitImage").val().trim();
     var queryURL = urlFaceToken + "?" + api_Key + "&image_url=" + photo + "&" + api_Secret;
 
-    console.log(queryURL);
+    // console.log(queryURL);
     $.ajax({
         url: queryURL,
         method: "POST"
     })
         .then(function (response) {
-            console.log(response);
+            // console.log(response);
             var result = response.faces;
 
-            console.log(result[0].face_token);
+            // console.log(result[0].face_token);
 
             var urlEmotions = "https://api-us.faceplusplus.com/facepp/v3/detect"
             var returnAttributes = "return_attributes=emotion"
@@ -101,8 +209,6 @@ $(".pickImage").on("click", function () {
 });
 
 function findCurrentEmotion(allEmo) {
-    console.log("Find Emotion Function!!");
-    console.log(allEmo);
 
     var anger = allEmo.anger;
     var fear = allEmo.fear;
@@ -115,46 +221,46 @@ function findCurrentEmotion(allEmo) {
     var allEmotions = [anger, fear, disgust, happiness, neutral, sadness, surprise];
 
     var currentEmotion = 0;
-    for (let i = 0; i < allEmotions.length; i++){
-        if (currentEmotion < allEmotions[i]){
+    for (let i = 0; i < allEmotions.length; i++) {
+        if (currentEmotion < allEmotions[i]) {
             currentEmotion = allEmotions[i];
         }
     }
 
-    if(currentEmotion === anger){
+    if (currentEmotion === anger) {
         return "anger";
-    } else if (currentEmotion === fear){
+    } else if (currentEmotion === fear) {
         return "fear";
-    } else if (currentEmotion === disgust){
+    } else if (currentEmotion === disgust) {
         return "disgust";
-    } else if (currentEmotion === happiness){
+    } else if (currentEmotion === happiness) {
         return "happiness";
-    } else if (currentEmotion === neutral){
+    } else if (currentEmotion === neutral) {
         return "neutral";
-    } else if (currentEmotion === sadness){
+    } else if (currentEmotion === sadness) {
         return "sadness";
-    } else if (currentEmotion === surprise){
+    } else if (currentEmotion === surprise) {
         return "surprise";
     } else {
         console.log("No returned emotion")
     }
 }
 
-/* const config = {
-    apiKey: "AIzaSyCDU6rYUeS3vBdWWsfuZGJQu07AHLGU7kU",
-    authDomain: "doubleapigroup-5d285.firebaseapp.com",
-    databaseURL: "https://doubleapigroup-5d285.firebaseio.com",
-    projectId: "doubleapigroup-5d285",
-    storageBucket: "doubleapigroup-5d285.appspot.com",
-    messagingSenderId: "518885986314",
-    appId: "1:518885986314:web:7767e302d24f7613"
-};
+// const config = {
+//     apiKey: "AIzaSyCDU6rYUeS3vBdWWsfuZGJQu07AHLGU7kU",
+//     authDomain: "doubleapigroup-5d285.firebaseapp.com",
+//     databaseURL: "https://doubleapigroup-5d285.firebaseio.com",
+//     projectId: "doubleapigroup-5d285",
+//     storageBucket: "doubleapigroup-5d285.appspot.com",
+//     messagingSenderId: "518885986314",
+//     appId: "1:518885986314:web:7767e302d24f7613"
+// };
 
-firebase.initializeApp(config);
-var database = firebase.database();
+// firebase.initializeApp(config);
+// var database = firebase.database();
 
-const storageService = firebase.storage();
-const storageRef = storageService.ref(); */
+// const storageService = firebase.storage();
+// const storageRef = storageService.ref();
 
 // document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
 // $(".file-select").on("change", handleFileUploadChange);
@@ -641,6 +747,5 @@ function initMapforFear() {
             })(marker, i)
         )
     }
-}
-
+};
 
