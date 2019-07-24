@@ -8,6 +8,10 @@
     align-content: center;
 }; */
 
+body{
+    background-image: url("https://images.assetsdelivery.com/compings_v2/annagolant/annagolant1807/annagolant180700934.jpg");
+}
+
 .container {
     font-family: 'Barlow Condensed', sans-serif;
 }
@@ -45,7 +49,7 @@
 }
 
 #map {
-    height: 25%;
+    height: 20%;
     width: 80%;
     position: absolute;
     top: 30;
