@@ -95,3 +95,7 @@ form {
 .card img {
     height: 150px;
 }
+
+#emotion-badge {
+    float: center;
+}
