@@ -131,6 +131,8 @@ $(".pickImage").on("click", function () {
                 var currentEmotion = findCurrentEmotion(result[0].attributes.emotion);
                 console.log(currentEmotion);
 
+                $(".jumbotron-fluid").attr("style", "display: none;");
+
                 if (currentEmotion === "anger") {
                     initMapforAnger();
                     // console.log("called anger");
@@ -352,7 +354,6 @@ function initMapforSadness() {
     var marker, i
 
     for (i = 0; i < locations.length; i++) {
-        console.log("hey")
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][2]),
             map: map,
