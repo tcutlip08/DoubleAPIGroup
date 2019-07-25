@@ -198,7 +198,7 @@ function findCurrentEmotion(allEmo) {
 }
 
 ///////////////////////////////////////
-////////////!!FireBase Storage!!///////
+///////////!!FireBase Storage!!////////
 ///////////////////////////////////////
 
 const config = {
@@ -334,6 +334,7 @@ function initMapforSadness() {
     var marker, i
 
     for (i = 0; i < locations.length; i++) {
+        console.log("hey")
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][2]),
             map: map,
@@ -356,11 +357,13 @@ function initMapforSadness() {
 //Happiness
 
 function initMapforHappiness() {
+
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(33.772163578, -84.390165106),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
     })
+
 
     var infowindow = new google.maps.InfoWindow({})
 
