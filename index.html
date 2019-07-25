@@ -40,23 +40,41 @@
             </div>
         </div> -->
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="header-container">
-                    Just Go With The FLO
+        <div class="row header-container">
+            <div class="col-md-8">
+                Just Go With The FLO
+            </div>
+            <div class="col-md-4 displayEmail">
+                <div class="col">
+                    <p>
+                        Email<br><hr><span id="displayEmail">Sign In</span>
+                    </p>
+                </div>
+                <div class="col">
+                    <button type="button" id="signOut" style="display: none;">Sign Out</button>
                 </div>
             </div>
         </div>
         <!-- <div>
-            <form enctype="multipart/form-data">
-                <strong>Upload file:</strong>
-                <input type="file" id="uploadPicture" />
-                <input type="submit" id="submitPicture" value="Submit" />
-            </form>
-        </div> -->
+                <form enctype="multipart/form-data">
+                    <strong>Upload file:</strong>
+                    <input type="file" id="uploadPicture" />
+                    <input type="submit" id="submitPicture" value="Submit" />
+                </form>
+            </div> -->
 
         <!-- <input type="file" onchange="previewFile()"><br>
-            <img src="" height="200" alt="Image preview..."> -->
+                <img src="" height="200" alt="Image preview..."> -->
+        <form>
+            <div class="col">
+                Email:<input type="text" name="email" id="email"><strong><span id="displayError"></span></strong>
+            </div>
+            <div class="col">
+                Password:<input type="password" name="passWord" id="passWord">
+            </div>
+            <input type="submit" value="Sign In" id="signInBtn">
+            <input type="submit" value="Sign Up" id="signUpBtn">
+        </form>
 
         <div class="button-section">
             <a type="button" class="pickImage" id="angry"><img src="assets/images/AngryFace.jpg"></a>
@@ -72,8 +90,10 @@
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
                         <h1 class="display-4"><strong>Hello</strong></h1>
-                        <p class="lead">Welcome to FLO! With cutting edge technology we can scan your face and give you
-                            suggestions of things to do and places to go based off of your age and emotions! Lets get
+                        <p class="lead">Welcome to FLO! With cutting edge technology we can scan your face and give
+                            you
+                            suggestions of things to do and places to go based off of your age and emotions! Lets
+                            get
                             started!
                     </div>
                 </div>
@@ -109,66 +129,66 @@
             <div>
                 <h1>
                     <span class="badge badge-secondary">Emotion</span>
-                    <h1>
-                        <button type="button" class="btn btn-primary" id="reset-btn">Reset</button>
+                </h1>
+                <button type="button" class="btn btn-primary" id="reset-btn">Reset</button>
 
-                        <div class="card text-center">
-                            <div class="card-header bg-primary" id="options-cards">
-                                These sound great!
+                <div class="card text-center">
+                    <div class="card-header bg-primary" id="options-cards">
+                        These sound great!
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card" id="card1" style="width: auto;">
+                                    <img src="assets/images/Jonathan.png" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title
+                                            and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="card" id="card1" style="width: 18rem;">
-                                            <img src="assets/images/Jonathan.png" class="card-img-top">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Card title</h5>
-                                                <p class="card-text">Some quick example text to build on the card title
-                                                    and make up the bulk of the card's content.</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div class="col-sm-6">
-                                            <div class="card" id="card2" style="width: 18rem;">
-                                                    <img src="assets/images/Jonathan.png" class="card-img-top">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Card title</h5>
-                                                <p class="card-text">Some quick example text to build on the card title
-                                                    and make up the bulk of the card's content.</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                            </div>
-                                        </div>
+                            <div class="col-sm-6">
+                                <div class="card" id="card2" style="width: auto;">
+                                    <img src="assets/images/Jonathan.png" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title
+                                            and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <div class="col-sm-6">
-                                            <div class="card" id="card3" style="width: 18rem;">
-                                                    <img src="assets/images/Jonathan.png" class="card-img-top">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Card title</h5>
-                                                <p class="card-text">Some quick example text to build on the card title
-                                                    and make up the bulk of the card's content.</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                            </div>
-                                        </div>
+                            <div class="col-sm-6">
+                                <div class="card" id="card3" style="width: auto;">
+                                    <img src="assets/images/Jonathan.png" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title
+                                            and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <div class="col-sm-6">
-                                            <div class="card" id="card4" style="width: 18rem;">
-                                                    <img src="assets/images/Jonathan.png" class="card-img-top">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Card title</h5>
-                                                <p class="card-text">Some quick example text to build on the card title
-                                                    and make up the bulk of the card's content.</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                            </div>
-                                        </div>
+                            <div class="col-sm-6">
+                                <div class="card" id="card4" style="width: auto;">
+                                    <img src="assets/images/Jonathan.png" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title
+                                            and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer text-muted"></div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted"></div>
             </div>
         </div>
     </div>

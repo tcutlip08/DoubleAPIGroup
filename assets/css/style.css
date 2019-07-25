@@ -16,12 +16,21 @@
     background-color: deepskyblue;
     color: white;
     height: 80px;
+    width: 100%;
     font-size: 36px;
     font-family: 'Russo One', sans-serif;
     text-align: center;
     margin: auto;
     padding: 10px;
     margin-bottom: 10px;
+}
+
+.displayEmail {
+    font-size: 20px;
+}
+
+form{
+    color: black;
 }
 
 .button-section {

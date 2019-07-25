@@ -176,52 +176,39 @@ function findCurrentEmotion(allEmo) {
 ////////////!!FireBase Storage!!///////
 ///////////////////////////////////////
 
-// const config = {
-//     apiKey: "AIzaSyCDU6rYUeS3vBdWWsfuZGJQu07AHLGU7kU",
-//     authDomain: "doubleapigroup-5d285.firebaseapp.com",
-//     databaseURL: "https://doubleapigroup-5d285.firebaseio.com",
-//     projectId: "doubleapigroup-5d285",
-//     storageBucket: "doubleapigroup-5d285.appspot.com",
-//     messagingSenderId: "518885986314",
-//     appId: "1:518885986314:web:7767e302d24f7613"
-// };
+const config = {
+    apiKey: "AIzaSyCDU6rYUeS3vBdWWsfuZGJQu07AHLGU7kU",
+    authDomain: "doubleapigroup-5d285.firebaseapp.com",
+    databaseURL: "https://doubleapigroup-5d285.firebaseio.com",
+    projectId: "doubleapigroup-5d285",
+    storageBucket: "doubleapigroup-5d285.appspot.com",
+    messagingSenderId: "518885986314",
+    appId: "1:518885986314:web:7767e302d24f7613"
+};
 
-// firebase.initializeApp(config);
-// var database = firebase.database();
+firebase.initializeApp(config);
+var database = firebase.database();
 
 ///////////////////////////////////////
 ////////////!!FireBase Storage!!///////
 ///////////////////////////////////////
 
-var broadway = {
-    info:
-        '<strong>Chipotle on Broadway</strong><br>\
-            5224 N Broadway St<br> Chicago, IL 60640<br>\
-            <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-    lat: 41.976816,
-    long: -87.659916,
-}
-
-var places = {
-    broadway: {info: '<strong>Chipotle on Broadway</strong><br>\5224 N Broadway St<br> Chicago, IL 60640<br>\<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',}
-}
-
-var belmont = {
-    info:
-        '<strong>Chipotle on Belmont</strong><br>\
-            1025 W Belmont Ave<br> Chicago, IL 60657<br>\
-            <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
-    lat: 41.93967,
-    long: -87.655167,
-}
-
-var sheridan = {
-    info:
-        '<strong>Chipotle on Sheridan</strong><br>\r\
-            6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
-            <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
-    lat: 42.002707,
-    long: -87.661236,
+var locations = {
+    broadway: {
+        info: '<strong>Chipotle on Broadway</strong><br>\5224 N Broadway St<br> Chicago, IL 60640<br>\<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+        lat: 41.976816,
+        long: -87.659916
+    },
+    belmont: {
+        info: '<strong>Chipotle on Belmont</strong><br>\1025 W Belmont Ave<br> Chicago, IL 60657<br>\<a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
+        lat: 41.93967,
+        long: -87.655167
+    },
+    sheridan: {
+        info: '<strong>Chipotle on Sheridan</strong><br>\r\6600 N Sheridan Rd<br> Chicago, IL 60626<br>\<a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+        lat: 42.002707,
+        long: -87.661236
+    }
 }
 
 function initMapforSadness() {
@@ -258,39 +245,6 @@ function initMapforSadness() {
 //Happiness
 
 function initMapforHappiness() {
-    var broadway = {
-        info:
-            '<strong>Chipotle on Broadway</strong><br>\
-          5224 N Broadway St<br> Chicago, IL 60640<br>\
-          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-        lat: 41.976816,
-        long: -87.659916,
-    }
-
-    var belmont = {
-        info:
-            '<strong>Chipotle on Belmont</strong><br>\
-          1025 W Belmont Ave<br> Chicago, IL 60657<br>\
-          <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
-        lat: 41.93967,
-        long: -87.655167,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>Chipotle on Sheridan</strong><br>\r\
-          6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
-          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
-        lat: 42.002707,
-        long: -87.661236,
-    }
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-    ]
-
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(41.976816, -87.659916),
@@ -324,39 +278,6 @@ function initMapforHappiness() {
 //Neutral
 
 function initMapforNeutral() {
-    var broadway = {
-        info:
-            '<strong>Chipotle on Broadway</strong><br>\
-          5224 N Broadway St<br> Chicago, IL 60640<br>\
-          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-        lat: 41.976816,
-        long: -87.659916,
-    }
-
-    var belmont = {
-        info:
-            '<strong>Chipotle on Belmont</strong><br>\
-          1025 W Belmont Ave<br> Chicago, IL 60657<br>\
-          <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
-        lat: 41.93967,
-        long: -87.655167,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>Chipotle on Sheridan</strong><br>\r\
-          6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
-          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
-        lat: 42.002707,
-        long: -87.661236,
-    }
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-    ]
-
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(41.976816, -87.659916),
@@ -390,39 +311,6 @@ function initMapforNeutral() {
 //Anger
 
 function initMapforAnger() {
-    var broadway = {
-        info:
-            '<strong>Chipotle on Broadway</strong><br>\
-          5224 N Broadway St<br> Chicago, IL 60640<br>\
-          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-        lat: 41.976816,
-        long: -87.659916,
-    }
-
-    var belmont = {
-        info:
-            '<strong>Chipotle on Belmont</strong><br>\
-          1025 W Belmont Ave<br> Chicago, IL 60657<br>\
-          <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
-        lat: 41.93967,
-        long: -87.655167,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>Chipotle on Sheridan</strong><br>\r\
-          6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
-          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
-        lat: 42.002707,
-        long: -87.661236,
-    }
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-    ]
-
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(41.976816, -87.659916),
@@ -456,39 +344,6 @@ function initMapforAnger() {
 //Surprise
 
 function initMapforSurprise() {
-    var broadway = {
-        info:
-            '<strong>Chipotle on Broadway</strong><br>\
-          5224 N Broadway St<br> Chicago, IL 60640<br>\
-          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-        lat: 41.976816,
-        long: -87.659916,
-    }
-
-    var belmont = {
-        info:
-            '<strong>Chipotle on Belmont</strong><br>\
-          1025 W Belmont Ave<br> Chicago, IL 60657<br>\
-          <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
-        lat: 41.93967,
-        long: -87.655167,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>Chipotle on Sheridan</strong><br>\r\
-          6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
-          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
-        lat: 42.002707,
-        long: -87.661236,
-    }
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-    ]
-
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(41.976816, -87.659916),
@@ -521,39 +376,6 @@ function initMapforSurprise() {
 //Fear
 
 function initMapforFear() {
-    var broadway = {
-        info:
-            '<strong>Chipotle on Broadway</strong><br>\
-          5224 N Broadway St<br> Chicago, IL 60640<br>\
-          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-        lat: 41.976816,
-        long: -87.659916,
-    }
-
-    var belmont = {
-        info:
-            '<strong>Chipotle on Belmont</strong><br>\
-          1025 W Belmont Ave<br> Chicago, IL 60657<br>\
-          <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
-        lat: 41.93967,
-        long: -87.655167,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>Chipotle on Sheridan</strong><br>\r\
-          6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
-          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
-        lat: 42.002707,
-        long: -87.661236,
-    }
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-    ]
-
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(41.976816, -87.659916),
@@ -583,43 +405,9 @@ function initMapforFear() {
     }
 }
 
-
 //Fear
 
 function initMapforFear() {
-    var broadway = {
-        info:
-            '<strong>Chipotle on Broadway</strong><br>\
-          5224 N Broadway St<br> Chicago, IL 60640<br>\
-          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-        lat: 41.976816,
-        long: -87.659916,
-    }
-
-    var belmont = {
-        info:
-            '<strong>Chipotle on Belmont</strong><br>\
-          1025 W Belmont Ave<br> Chicago, IL 60657<br>\
-          <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
-        lat: 41.93967,
-        long: -87.655167,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>Chipotle on Sheridan</strong><br>\r\
-          6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
-          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
-        lat: 42.002707,
-        long: -87.661236,
-    }
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-    ]
-
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(41.976816, -87.659916),
