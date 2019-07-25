@@ -130,6 +130,31 @@ $(".pickImage").on("click", function () {
                 result = response.faces;
                 var currentEmotion = findCurrentEmotion(result[0].attributes.emotion);
                 console.log(currentEmotion);
+
+                if (currentEmotion === "anger") {
+                    initMapforAnger();
+                    console.log("called anger");
+                } else if (currentEmotion === "fear") {
+                    initMapforFear();
+                    console.log("called fear");
+                } else if (currentEmotion === "disgust") {
+                    initMapforDisgust();
+                    console.log("called disgust");
+                } else if (currentEmotion === "happiness") {
+                    initMapforHappiness();
+                    console.log("called happiness");
+                } else if (currentEmotion === "neutral") {
+                    initMapforNeutral();
+                    console.log("called neutral");
+                } else if (currentEmotion === "sadness") {
+                    initMapforSadness();
+                    console.log("called sadness");
+                } else if (currentEmotion === "surprise") {
+                    initMapforSurprise();
+                    console.log("called surprise");
+                } else {
+                    console.log("No returned emotion")
+                }
             });
         });
 });
@@ -189,6 +214,86 @@ const config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
+$("#signInBtn").on("click", function () {
+
+    event.preventDefault();
+
+    const email = $("#email").val().trim();
+    const password = $("#passWord").val().trim();
+    const auth = firebase.auth();
+
+    const promise = auth.signInWithEmailAndPassword(email, password);
+    $("#displayError").text("");
+    promise.catch(e => {
+        console.log(e.message);
+        promise.catch(e => {
+            console.log(e.message);
+            $("#displayError").text(e.message);
+        });
+    });
+
+    $("#email").val("");
+    $("#passWord").val("");
+
+    console.log("sign in");
+});
+
+$("#signUpBtn").on("click", function () {
+
+    event.preventDefault();
+
+    // Check For Real Email
+    const email = $("#email").val().trim();
+    const password = $("#passWord").val().trim();
+    const auth = firebase.auth();
+
+    const promise = auth.createUserWithEmailAndPassword(email, password);
+    $("#displayError").text("");
+    promise.catch(e => {
+        console.log(e.message);
+        $("#displayError").text(e.message);
+    });
+
+    console.log("sign up");
+});
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+        console.log(firebaseUser);
+        user = firebaseUser;
+
+        $("#signOut").attr("style", "display: block;");
+        $(".signIn").attr("style", "display: none;");
+        $(".welcomeScreen").attr("style", "display: none;");
+        $(".displayApp").attr("style", "display: block;");
+        $("#displayEmail").text(firebaseUser.email);
+
+    } else {
+        console.log("not logged in");
+        $(".signIn").attr("style", "display: block");
+        $(".welcomeScreen").attr("style", "display: block;");
+        $("#displayEmail").text("Sign In");
+
+        $(".displayApp").attr("style", "display: none;");
+
+        // $(".chatDiv").attr("style", "display: block");
+        // $(".chatDiv").attr("style", "display: none");
+    }
+})
+
+$("#signOut").on("click", function () {
+
+    firebase.auth().signOut();
+
+    $("#signOut").attr("style", "display: none");
+
+    console.log("sign out");
+});
+
+function createOrJoinRoom() {
+    // console.log("hey");
+}
+
 ///////////////////////////////////////
 ////////////!!FireBase Storage!!///////
 ///////////////////////////////////////
@@ -208,6 +313,12 @@ var locations = {
         info: '<strong>Chipotle on Sheridan</strong><br>\r\6600 N Sheridan Rd<br> Chicago, IL 60626<br>\<a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
         lat: 42.002707,
         long: -87.661236
+    },
+    meridian: {
+        info:
+            '<strong>punchline</strong><br>\r\3652 Roswell Rd<br> Atlanta, GA 30342<br>\<a href="https://goo.gl/maps/8uMActGu1X9DNZ3q9">Get Directions</a>',
+        lat: 33.883970,
+        long: -84.379090
     }
 }
 
@@ -224,7 +335,7 @@ function initMapforSadness() {
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][2]),
             map: map,
         })
 
@@ -247,7 +358,7 @@ function initMapforSadness() {
 function initMapforHappiness() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
-        center: new google.maps.LatLng(41.976816, -87.659916),
+        center: new google.maps.LatLng(33.772163578, -84.390165106),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
     })
 
@@ -257,7 +368,7 @@ function initMapforHappiness() {
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][2]),
             map: map,
         })
 
@@ -280,7 +391,7 @@ function initMapforHappiness() {
 function initMapforNeutral() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
-        center: new google.maps.LatLng(41.976816, -87.659916),
+        center: new google.maps.LatLng(33.772163578, -84.390165106),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
     })
 
@@ -290,7 +401,7 @@ function initMapforNeutral() {
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][3]),
             map: map,
         })
 
@@ -313,7 +424,7 @@ function initMapforNeutral() {
 function initMapforAnger() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
-        center: new google.maps.LatLng(41.976816, -87.659916),
+        center: new google.maps.LatLng(33.772163578, -84.390165106),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
     })
 
@@ -323,7 +434,7 @@ function initMapforAnger() {
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][3]),
             map: map,
         })
 
@@ -346,7 +457,7 @@ function initMapforAnger() {
 function initMapforSurprise() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
-        center: new google.maps.LatLng(41.976816, -87.659916),
+        center: new google.maps.LatLng(33.772163578, -84.390165106),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
     })
 
@@ -356,7 +467,7 @@ function initMapforSurprise() {
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][3]),
             map: map,
         })
 
@@ -378,7 +489,7 @@ function initMapforSurprise() {
 function initMapforFear() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
-        center: new google.maps.LatLng(41.976816, -87.659916),
+        center: new google.maps.LatLng(33.772163578, -84.390165106),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
     })
 
@@ -388,7 +499,7 @@ function initMapforFear() {
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][3]),
             map: map,
         })
 
@@ -410,7 +521,7 @@ function initMapforFear() {
 function initMapforFear() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
-        center: new google.maps.LatLng(41.976816, -87.659916),
+        center: new google.maps.LatLng(33.772163578, -84.390165106),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
     })
 
@@ -420,7 +531,7 @@ function initMapforFear() {
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][3]),
             map: map,
         })
 
@@ -437,3 +548,34 @@ function initMapforFear() {
     }
 };
 
+//Disgust
+
+function initMapforDisgust() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: new google.maps.LatLng(33.772163578, -84.390165106),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+    })
+
+    var infowindow = new google.maps.InfoWindow({})
+
+    var marker, i
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][3]),
+            map: map,
+        })
+
+        google.maps.event.addListener(
+            marker,
+            'click',
+            (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0])
+                    infowindow.open(map, marker)
+                }
+            })(marker, i)
+        )
+    }
+};
