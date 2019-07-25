@@ -81,25 +81,25 @@ $(".pickImage").on("click", function () {
 
     if ($(this).attr("id") === "fear") {
         chosenImgUrl = imgSrc.fear;
-        $(".badge-secondary").text("Emotion: Fear");
+        $(".badge-primary").text("Fear");
     } else if ($(this).attr("id") === "neutral") {
         chosenImgUrl = imgSrc.neutral;
-        $(".badge-secondary").text("Emotion: Neutral");
+        $(".badge-primary").text("Neutral");
     } else if ($(this).attr("id") === "angry") {
         chosenImgUrl = imgSrc.angry;
-        $(".badge-secondary").text("Emotion: Angry");
+        $(".badge-primary").text("Angry");
     } else if ($(this).attr("id") === "happy") {
         chosenImgUrl = imgSrc.happy;
-        $(".badge-secondary").text("Emotion: Happy");
+        $(".badge-primary").text("Happy");
     } else if ($(this).attr("id") === "disgust") {
         chosenImgUrl = imgSrc.disgust;
-        $(".badge-secondary").text("Emotion: Disgust");
+        $(".badge-primary").text("Disgust");
     } else if ($(this).attr("id") === "sad") {
         chosenImgUrl = imgSrc.sad;
-        $(".badge-secondary").text("Emotion: Sad");
+        $(".badge-primary").text("Sad");
     } else if ($(this).attr("id") === "surprise") {
         chosenImgUrl = imgSrc.surprise;
-        $(".badge-secondary").text("Emotion: Surprise");
+        $(".badge-primary").text("Surprise");
     }
 
     var urlFaceToken = "https://api-us.faceplusplus.com/facepp/v3/detect"
