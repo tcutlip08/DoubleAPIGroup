@@ -1,6 +1,6 @@
 # DoubleAPIGroup
 
-Created FLO application that incorporates a registration process where the user first need to be registered and upon registration he/she will be signed in to the Homepage. Once the registered user lands into the homepage user gets the option to choose the picture best described to show user's emotion and get suggestion on what he/she can do to improve  or get better with current emotion the user is in. 
+Created FLO application that incorporates a registration process where the user first need to be registered and upon registration he/she will be signed in to the Homepage. Once the registered user lands into the homepage user gets the option to choose the picture best described to show user's emotion and get suggestion on what he/she can do to improve  or get better from current emotion the user is in. 
 
 
 ## Technologies Utilized 
