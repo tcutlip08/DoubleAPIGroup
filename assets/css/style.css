@@ -8,7 +8,7 @@
     align-content: center;
 }; */
 
-body{
+body {
     background-image: url("https://images.assetsdelivery.com/compings_v2/annagolant/annagolant1807/annagolant180700934.jpg");
     background-size: cover;
 }
@@ -18,6 +18,10 @@ body{
 }
 
 .header-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    clear: both;
     background-color: deepskyblue;
     color: white;
     height: 80px;
@@ -25,7 +29,7 @@ body{
     font-size: 36px;
     font-family: 'Russo One', sans-serif;
     text-align: center;
-    margin: auto;
+    margin: 10px auto;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -34,12 +38,12 @@ body{
     font-size: 20px;
 }
 
-#signOut{
+#signOut {
     font-size: 15px;
-    margin-top: 15px;
+    margin: 15px auto;
 }
 
-form{
+form {
     color: black;
     float: right;
     text-align: right;
@@ -49,9 +53,17 @@ form{
     height: 80px;
     font-size: 36px;
     text-align: center;
-    margin: auto;
+    margin: 100px auto auto auto;
     padding: 10px;
     margin-bottom: 20px;
+}
+
+.welcomeScreen{
+    margin: 100px auto auto auto;
+}
+
+.signIn{
+    margin: 100px auto auto auto;
 }
 
 .button-section img {
@@ -61,16 +73,16 @@ form{
 
 .jumbo-tron {
     width: 80%;
-    height: 50px;
+    height: 100px;
     margin: auto;
 }
 
 #map {
-    height: 20%;
+    height: 60%;
     width: 80%;
     position: absolute;
     top: 30;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
     right: 0;
     margin: auto;
@@ -80,6 +92,6 @@ form{
     color: aliceblue;
 }
 
-.card img{
-height: 150px;
+.card img {
+    height: 150px;
 }

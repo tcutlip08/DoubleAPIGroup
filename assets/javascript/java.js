@@ -131,29 +131,29 @@ $(".pickImage").on("click", function () {
                 var currentEmotion = findCurrentEmotion(result[0].attributes.emotion);
                 console.log(currentEmotion);
 
+                $(".jumbotron-fluid").attr("style", "display: none;");
+
                 if (currentEmotion === "anger") {
                     initMapforAnger();
-                    console.log("called anger");
+                    // console.log("called anger");
                 } else if (currentEmotion === "fear") {
                     initMapforFear();
-                    console.log("called fear");
+                    // console.log("called fear");
                 } else if (currentEmotion === "disgust") {
                     initMapforDisgust();
-                    console.log("called disgust");
+                    // console.log("called disgust");
                 } else if (currentEmotion === "happiness") {
                     initMapforHappiness();
-                    console.log("called happiness");
+                    // console.log("called happiness");
                 } else if (currentEmotion === "neutral") {
                     initMapforNeutral();
-                    console.log("called neutral");
+                    // console.log("called neutral");
                 } else if (currentEmotion === "sadness") {
                     initMapforSadness();
-                    console.log("called sadness");
+                    // console.log("called sadness");
                 } else if (currentEmotion === "surprise") {
                     initMapforSurprise();
-                    console.log("called surprise");
-                } else {
-                    console.log("No returned emotion")
+                    // console.log("called surprise");
                 }
             });
         });
@@ -198,7 +198,7 @@ function findCurrentEmotion(allEmo) {
 }
 
 ///////////////////////////////////////
-////////////!!FireBase Storage!!///////
+///////////!!FireBase Storage!!////////
 ///////////////////////////////////////
 
 const config = {
@@ -298,49 +298,50 @@ function createOrJoinRoom() {
 ////////////!!FireBase Storage!!///////
 ///////////////////////////////////////
 
+var broadway = {
+    info:
+        '<strong>Midtown Blood Donation Center</strong><br>\
+        1955 Monroe Drive<br> Atlanta, GA 30324<br>\
+      <a href="https://goo.gl/maps/r1FSjjaDhCxHkTcr7">Get Directions</a>',
+    lat: 33.759080,
+    long: -84.392200,
+}
+
+var belmont = {
+    info:
+        '<strong>Hands On Atlanta</strong><br>\
+        600 Means St NW #100<br> Atlanta, GA 30318<br>\
+      <a href="https://goo.gl/maps/h85a4zUmDWowDoci9">Get Directions</a>',
+    lat: 33.748550,
+    long: -84.391500,
+}
+
+var sheridan = {
+    info:
+        '<strong>World of Coca-Cola</strong><br>\r\
+        121 Baker St NW<br> Atlanta, GA 30313<br>\
+      <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+    lat:  35.752060,
+    long: -87.661236,
+}
+
+var meridian = {
+    info:
+        '<strong>World of Coca-Cola</strong><br>\r\
+        121 Baker St NW<br> Atlanta, GA 30313<br>\
+      <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+    lat:  35.752060,
+    long: -87.661236,
+}
+
+var locations = [
+    [broadway.info, broadway.lat, broadway.long, 0],
+    [belmont.info, belmont.lat, belmont.long, 1],
+    [sheridan.info, sheridan.lat, sheridan.long, 2],
+    [meridian.info, meridian.lat, meridian.long, 3],
+]
+
 function initMapforSadness() {
-    var broadway = {
-        info:
-            '<strong>Piedmont Park</strong><br>\
-            400 Park Dr NE<br> Atlanta, GA 30306<br>\
-          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-        lat: 33.786839,
-        long: -84.372849,
-    }
-
-    var belmont = {
-        info:
-            '<strong>The Vortex</strong><br>\
-            438 Moreland Ave NE<br> Atlanta, GA 30307<br>\
-          <a href="https://goo.gl/maps/FZbMbxJpcEsG2pd88">Get Directions</a>',
-        lat: 33.766350,
-        long: -84.349370,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>bliss spa</strong><br>\r\
-            45 Ivan Allen Jr Blvd NW<br> Atlanta, GA 30308<br>\
-          <a href="https://goo.gl/maps/2QpXsEgm5JpDpnsn7">Get Directions</a>',
-        lat:  33.765110,
-        long: -84.389220,
-    }
-
-    var meridian = {
-        info:
-            '<strong>punchline</strong><br>\r\
-            3652 Roswell Rd<br> Atlanta, GA 30342<br>\
-          <a href="https://goo.gl/maps/8uMActGu1X9DNZ3q9">Get Directions</a>',
-        lat: 33.883970,
-        long: -84.379090,
-    }
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-        [meridian.info, meridian.lat, meridian.long, 3],
-    ]
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
@@ -375,54 +376,13 @@ function initMapforSadness() {
 //Happiness
 
 function initMapforHappiness() {
-    var broadway = {
-        info:
-            '<strong>Midtown Blood Donation Center</strong><br>\
-            1955 Monroe Drive<br> Atlanta, GA 30324<br>\
-          <a href="https://goo.gl/maps/r1FSjjaDhCxHkTcr7">Get Directions</a>',
-        lat: 33.759080,
-        long: -84.392200,
-    }
-
-    var belmont = {
-        info:
-            '<strong>Hands On Atlanta</strong><br>\
-            600 Means St NW #100<br> Atlanta, GA 30318<br>\
-          <a href="https://goo.gl/maps/h85a4zUmDWowDoci9">Get Directions</a>',
-        lat: 33.748550,
-        long: -84.391500,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>World of Coca-Cola</strong><br>\r\
-            121 Baker St NW<br> Atlanta, GA 30313<br>\
-          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
-        lat:  35.752060,
-        long: -87.661236,
-    }
-
-    var meridian = {
-        info:
-            '<strong>World of Coca-Cola</strong><br>\r\
-            121 Baker St NW<br> Atlanta, GA 30313<br>\
-          <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
-        lat:  35.752060,
-        long: -87.661236,
-    }
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-        [meridian.info, meridian.lat, meridian.long, 3],
-    ]
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(33.772163578, -84.390165106),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
     })
+
 
     var infowindow = new google.maps.InfoWindow({})
 
@@ -451,49 +411,6 @@ function initMapforHappiness() {
 //Neutral
 
 function initMapforNeutral() {
-    var broadway = {
-        info:
-            '<strong>Piedmont Park</strong><br>\
-            400 Park Dr NE<br> Atlanta, GA 30306<br>\
-          <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-        lat: 33.786839,
-        long: -84.372849,
-    }
-
-    var belmont = {
-        info:
-            '<strong>Cathedral of Christ the King</strong><br>\
-            2699 Peachtree Rd NE<br> Atlanta, GA 30305<br>\
-          <a href="https://goo.gl/maps/3rj3AurBBrs8LJ3x6">Get Directions</a>',
-        lat: 33.828120,
-        long: -84.386480,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>bliss spa</strong><br>\r\
-            45 Ivan Allen Jr Blvd NW<br> Atlanta, GA 30308<br>\
-          <a href="https://goo.gl/maps/2QpXsEgm5JpDpnsn7">Get Directions</a>',
-        lat:  33.765110,
-        long: -84.389220,
-    }
-
-    var meridian = {
-        info:
-            '<strong>punchline</strong><br>\r\
-            3652 Roswell Rd<br> Atlanta, GA 30342<br>\
-          <a href="https://goo.gl/maps/8uMActGu1X9DNZ3q9">Get Directions</a>',
-        lat: 33.883970,
-        long: -84.379090,
-    }
-
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-        [meridian.info, meridian.lat, meridian.long, 3],
-    ]
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
@@ -528,49 +445,7 @@ function initMapforNeutral() {
 //Anger
 
 function initMapforAnger() {
-    var broadway = {
-        info:
-            '<strong>Cathedral of Christ the King</strong><br>\
-            2699 Peachtree Rd NE<br> Atlanta, GA 30305<br>\
-          <a href="https://goo.gl/maps/3rj3AurBBrs8LJ3x6">Get Directions</a>',
-        lat: 33.828120,
-        long: -84.386480,
-    }
-
-    var belmont = {
-        info:
-            '<strong>The Vortex</strong><br>\
-            438 Moreland Ave NE<br> Atlanta, GA 30307<br>\
-          <a href="https://goo.gl/maps/FZbMbxJpcEsG2pd88">Get Directions</a>',
-        lat: 33.766350,
-        long: -84.349370,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>bliss spa</strong><br>\r\
-            45 Ivan Allen Jr Blvd NW<br> Atlanta, GA 30308<br>\
-          <a href="https://goo.gl/maps/2QpXsEgm5JpDpnsn7">Get Directions</a>',
-        lat:  33.765110,
-        long: -84.389220,
-    }
-
-    var meridian = {
-        info:
-            '<strong>punchline</strong><br>\r\
-            3652 Roswell Rd<br> Atlanta, GA 30342<br>\
-          <a href="https://goo.gl/maps/8uMActGu1X9DNZ3q9">Get Directions</a>',
-        lat: 33.883970,
-        long: -84.379090,
-    }
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-        [meridian.info, meridian.lat, meridian.long, 3],
-    ]
-
+    
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(33.772163578, -84.390165106),
@@ -604,50 +479,6 @@ function initMapforAnger() {
 //Surprise
 
 function initMapforSurprise() {    
-    var broadway = {
-        info:
-            '<strong>Georgia aquarium</strong><br>\
-            225 Baker St NW<br> Atlanta, GA 30313<br>\
-          <a href="https://goo.gl/maps/ttbiPLbqzUG7kpBG8">Get Directions</a>',
-        lat: 33.763500,
-        long: -84.395111,
-    }
-
-    var belmont = {
-        info:
-            '<strong>zoo atlanta</strong><br>\
-            800 Cherokee Ave SE<br> Atlanta, GA 30315<br>\
-          <a href="https://goo.gl/maps/hMuoRuehQ7YXWeRy7">Get Directions</a>',
-        lat: 33.733761,
-        long: -84.372063,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>bliss spa</strong><br>\r\
-            45 Ivan Allen Jr Blvd NW<br> Atlanta, GA 30308<br>\
-          <a href="https://goo.gl/maps/2QpXsEgm5JpDpnsn7">Get Directions</a>',
-        lat:  33.765110,
-        long: -84.389220,
-    }
-
-    var meridian = {
-        info:
-            '<strong>punchline</strong><br>\r\
-            3652 Roswell Rd<br> Atlanta, GA 30342<br>\
-          <a href="https://goo.gl/maps/8uMActGu1X9DNZ3q9">Get Directions</a>',
-        lat: 33.883970,
-        long: -84.379090,
-    }
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-        [meridian.info, meridian.lat, meridian.long, 3],
-    ]
-
-    
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
@@ -681,51 +512,7 @@ function initMapforSurprise() {
 //Fear
 
 function initMapforFear() {
-    var broadway = {
-        info:
-            '<strong>Cathedral of Christ the King</strong><br>\
-            2699 Peachtree Rd NE<br> Atlanta, GA 30305<br>\
-          <a href="https://goo.gl/maps/3rj3AurBBrs8LJ3x6">Get Directions</a>',
-        lat: 33.828120,
-        long: -84.386480,
-    }
-
-    var belmont = {
-        info:
-            '<strong>The Vortex</strong><br>\
-            438 Moreland Ave NE<br> Atlanta, GA 30307<br>\
-          <a href="https://goo.gl/maps/FZbMbxJpcEsG2pd88">Get Directions</a>',
-        lat: 33.766350,
-        long: -84.349370,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>Emory Proton Therapy Center</strong><br>\r\
-            615 Peachtree St NE<br> Atlanta, GA 30308<br>\
-          <a href="https://goo.gl/maps/PiRQP68VxrMp2PJL9">Get Directions</a>',
-        lat:  33.765110,
-        long: -84.389220,
-    }
-
-    var meridian = {
-        info:
-            '<strong>punchline</strong><br>\r\
-            3652 Roswell Rd<br> Atlanta, GA 30342<br>\
-          <a href="https://goo.gl/maps/8uMActGu1X9DNZ3q9">Get Directions</a>',
-        lat: 33.883970,
-        long: -84.379090,
-    }
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-        [meridian.info, meridian.lat, meridian.long, 3],
-    ]
-
     
-
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(33.772163578, -84.390165106),
@@ -759,50 +546,7 @@ function initMapforFear() {
 //Fear
 
 function initMapforDisgust() {
-    var broadway = {
-        info:
-            '<strong>Cathedral of Christ the King</strong><br>\
-            2699 Peachtree Rd NE<br> Atlanta, GA 30305<br>\
-          <a href="https://goo.gl/maps/3rj3AurBBrs8LJ3x6">Get Directions</a>',
-        lat: 33.828120,
-        long: -84.386480,
-    }
-
-    var belmont = {
-        info:
-            '<strong>Atlanta Symphony Orchestra</strong><br>\
-            1280 Peachtree St NE<br> Atlanta, GA 30309<br>\
-          <a href="https://goo.gl/maps/gSjFQvaQbtpxYJX37">Get Directions</a>',
-        lat: 41.93967,
-        long: -87.655167,
-    }
-
-    var sheridan = {
-        info:
-            '<strong>bliss spa</strong><br>\r\
-            45 Ivan Allen Jr Blvd NW<br> Atlanta, GA 30308<br>\
-          <a href="https://goo.gl/maps/2QpXsEgm5JpDpnsn7">Get Directions</a>',
-        lat:  33.765110,
-        long: -84.389220,
-    }
-
-
-    var meridian = {
-        info:
-            '<strong>punchline</strong><br>\r\
-            3652 Roswell Rd<br> Atlanta, GA 30342<br>\
-          <a href="https://goo.gl/maps/8uMActGu1X9DNZ3q9">Get Directions</a>',
-        lat: 33.883970,
-        long: -84.379090,
-    }
-
-    var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-        [meridian.info, meridian.lat, meridian.long, 3]
-    ]
-
+    
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(33.772163578, -84.390165106),
