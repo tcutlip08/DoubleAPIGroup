@@ -648,4 +648,11 @@ function initMapforFear() {
         )
     }
 };
-
+$(document).ready(function(){
+$("#angry").on("click",function(){
+console.log("Something");
+var imageTag = $("<img>");
+imageTag.attr("src","assets/images/AngryFace.jpg");
+$("#card1").append(imageTag)
+});
+});
