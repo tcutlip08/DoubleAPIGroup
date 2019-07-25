@@ -133,27 +133,25 @@ $(".pickImage").on("click", function () {
 
                 if (currentEmotion === "anger") {
                     initMapforAnger();
-                    console.log("called anger");
+                    // console.log("called anger");
                 } else if (currentEmotion === "fear") {
                     initMapforFear();
-                    console.log("called fear");
+                    // console.log("called fear");
                 } else if (currentEmotion === "disgust") {
                     initMapforDisgust();
-                    console.log("called disgust");
+                    // console.log("called disgust");
                 } else if (currentEmotion === "happiness") {
                     initMapforHappiness();
-                    console.log("called happiness");
+                    // console.log("called happiness");
                 } else if (currentEmotion === "neutral") {
                     initMapforNeutral();
-                    console.log("called neutral");
+                    // console.log("called neutral");
                 } else if (currentEmotion === "sadness") {
                     initMapforSadness();
-                    console.log("called sadness");
+                    // console.log("called sadness");
                 } else if (currentEmotion === "surprise") {
                     initMapforSurprise();
-                    console.log("called surprise");
-                } else {
-                    console.log("No returned emotion")
+                    // console.log("called surprise");
                 }
             });
         });
@@ -298,34 +296,54 @@ function createOrJoinRoom() {
 ////////////!!FireBase Storage!!///////
 ///////////////////////////////////////
 
-var locations = {
-    broadway: {
-        info: '<strong>Chipotle on Broadway</strong><br>\5224 N Broadway St<br> Chicago, IL 60640<br>\<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-        lat: 41.976816,
-        long: -87.659916
-    },
-    belmont: {
-        info: '<strong>Chipotle on Belmont</strong><br>\1025 W Belmont Ave<br> Chicago, IL 60657<br>\<a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
-        lat: 41.93967,
-        long: -87.655167
-    },
-    sheridan: {
-        info: '<strong>Chipotle on Sheridan</strong><br>\r\6600 N Sheridan Rd<br> Chicago, IL 60626<br>\<a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
-        lat: 42.002707,
-        long: -87.661236
-    },
-    meridian: {
-        info:
-            '<strong>punchline</strong><br>\r\3652 Roswell Rd<br> Atlanta, GA 30342<br>\<a href="https://goo.gl/maps/8uMActGu1X9DNZ3q9">Get Directions</a>',
-        lat: 33.883970,
-        long: -84.379090
-    }
+var broadway = {
+    info:
+        '<strong>Midtown Blood Donation Center</strong><br>\
+        1955 Monroe Drive<br> Atlanta, GA 30324<br>\
+      <a href="https://goo.gl/maps/r1FSjjaDhCxHkTcr7">Get Directions</a>',
+    lat: 33.759080,
+    long: -84.392200,
 }
 
+var belmont = {
+    info:
+        '<strong>Hands On Atlanta</strong><br>\
+        600 Means St NW #100<br> Atlanta, GA 30318<br>\
+      <a href="https://goo.gl/maps/h85a4zUmDWowDoci9">Get Directions</a>',
+    lat: 33.748550,
+    long: -84.391500,
+}
+
+var sheridan = {
+    info:
+        '<strong>World of Coca-Cola</strong><br>\r\
+        121 Baker St NW<br> Atlanta, GA 30313<br>\
+      <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+    lat:  35.752060,
+    long: -87.661236,
+}
+
+var meridian = {
+    info:
+        '<strong>World of Coca-Cola</strong><br>\r\
+        121 Baker St NW<br> Atlanta, GA 30313<br>\
+      <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+    lat:  35.752060,
+    long: -87.661236,
+}
+
+var locations = [
+    [broadway.info, broadway.lat, broadway.long, 0],
+    [belmont.info, belmont.lat, belmont.long, 1],
+    [sheridan.info, sheridan.lat, sheridan.long, 2],
+    [meridian.info, meridian.lat, meridian.long, 3],
+]
+
 function initMapforSadness() {
+
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
-        center: new google.maps.LatLng(41.976816, -87.659916),
+        center: new google.maps.LatLng(33.772163578, -84.390165106),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
     })
 
@@ -392,6 +410,7 @@ function initMapforHappiness() {
 //Neutral
 
 function initMapforNeutral() {
+
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(33.772163578, -84.390165106),
@@ -404,7 +423,7 @@ function initMapforNeutral() {
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][3]),
+            position: new google.maps.LatLng(locations[i][1], locations[i][2],locations[i][3]),
             map: map,
         })
 
@@ -425,6 +444,7 @@ function initMapforNeutral() {
 //Anger
 
 function initMapforAnger() {
+    
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(33.772163578, -84.390165106),
@@ -457,7 +477,8 @@ function initMapforAnger() {
 
 //Surprise
 
-function initMapforSurprise() {
+function initMapforSurprise() {    
+
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(33.772163578, -84.390165106),
@@ -470,7 +491,7 @@ function initMapforSurprise() {
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][3]),
+            position: new google.maps.LatLng(locations[i][1], locations[i][2],locations[i][3]),
             map: map,
         })
 
@@ -490,6 +511,7 @@ function initMapforSurprise() {
 //Fear
 
 function initMapforFear() {
+    
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(33.772163578, -84.390165106),
@@ -502,7 +524,7 @@ function initMapforFear() {
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][3]),
+            position: new google.maps.LatLng(locations[i][1], locations[i][2],locations[i][3]),
             map: map,
         })
 
@@ -519,41 +541,11 @@ function initMapforFear() {
     }
 }
 
+
 //Fear
-
-function initMapforFear() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
-        center: new google.maps.LatLng(33.772163578, -84.390165106),
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-    })
-
-    var infowindow = new google.maps.InfoWindow({})
-
-    var marker, i
-
-    for (i = 0; i < locations.length; i++) {
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][3]),
-            map: map,
-        })
-
-        google.maps.event.addListener(
-            marker,
-            'click',
-            (function (marker, i) {
-                return function () {
-                    infowindow.setContent(locations[i][0])
-                    infowindow.open(map, marker)
-                }
-            })(marker, i)
-        )
-    }
-};
-
-//Disgust
 
 function initMapforDisgust() {
+    
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: new google.maps.LatLng(33.772163578, -84.390165106),
@@ -566,7 +558,7 @@ function initMapforDisgust() {
 
     for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][3]),
+            position: new google.maps.LatLng(locations[i][1], locations[i][2],locations[i][3]),
             map: map,
         })
 
