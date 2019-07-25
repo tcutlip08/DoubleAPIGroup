@@ -10,6 +10,7 @@
 
 body{
     background-image: url("https://images.assetsdelivery.com/compings_v2/annagolant/annagolant1807/annagolant180700934.jpg");
+    background-size: cover;
 }
 
 .container {
@@ -20,12 +21,28 @@ body{
     background-color: deepskyblue;
     color: white;
     height: 80px;
+    width: 100%;
     font-size: 36px;
     font-family: 'Russo One', sans-serif;
     text-align: center;
     margin: auto;
     padding: 10px;
     margin-bottom: 10px;
+}
+
+.displayEmail {
+    font-size: 20px;
+}
+
+#signOut{
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+form{
+    color: black;
+    float: right;
+    text-align: right;
 }
 
 .button-section {

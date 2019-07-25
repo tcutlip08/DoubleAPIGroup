@@ -21,39 +21,101 @@
 </header>
 
 <body>
-        <div class="container">
+    <!-- <div class='row'>
+            <div class='booth'>
+                <video id="liveVideo" width="400px" height="300px"></video>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button id="takePhoto">Take Picture</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="output">
+                    <canvas id="canvas">
+                    </canvas>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div> -->
+    <div class="container">
+        <div class="row header-container">
+            <div class="col-md-8">
+                Just Go With The FLO
+            </div>
+            <div class="col-md-4 displayEmail">
                 <div class="row">
                     <div class="col">
-                        <div class="header-container">
-                            Just Go With The FLO
-                        </div>
+                        <p>
+                            User<br><span id="displayEmail">Sign In</span>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <button type="button" id="signOut" style="display: none;">Sign Out</button>
                     </div>
                 </div>
-        <div> 
+            </div>
+        </div>
+        <!-- <div>
+                <form enctype="multipart/form-data">
+                    <strong>Upload file:</strong>
+                    <input type="file" id="uploadPicture" />
+                    <input type="submit" id="submitPicture" value="Submit" />
+                </form>
+            </div> -->
 
-        <div class="button-section">
-                <a type="button" class="pickImage" id="angry"><img src="assets/images/AngryFace.jpg" onclick="initMapforAnger()"></a>
-                <a type="button" class="pickImage" id="neutral"><img src="assets/images/Praveen.jpg"onclick="initMapforNeutral()"></a>
-                <a type="button" class="pickImage" id="fear"><img src="assets/images/FearFace.jpg" onclick="initMapforFear()"></a>
-                <a type="button" class="pickImage" id="disgust"><img src="assets/images/BaldWhiteDude.jpg" onclick="initMapforDisgust()"></a>
-                <a type="button" class="pickImage" id="happy"><img src="assets/images/Jonathan.png" onclick="initMapforHappiness()"></a>
-                <a type="button" class="pickImage" id="sad"><img src="assets/images/SadKid.jpg" onclick="initMapforSadness()"></a>
-                <a type="button" class="pickImage" id="surprise"><img src="assets/images/SurpriseFace.jpg" onclick="initMapforSurprise()"></a>
+        <!-- <input type="file" onchange="previewFile()"><br>
+                <img src="" height="200" alt="Image preview..."> -->
+        <div class="row">
+            <div class="col-md-8 welcomeScreen">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Welcome to FLO!</h1>
+                        <p class="lead">With cutting edge technology we can scan your face and give you
+                            suggestions of things to do and places to go based off of your age and emotions! Lets get
+                            started!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 signIn">
+                <form>
+                    <strong>Email:</strong><input type="text" name="email" id="email"><br>
+                    <strong>Password:</strong><input type="password" name="passWord" id="passWord"><br>
+                    <input type="submit" value="Sign In" id="signInBtn">
+                    <input type="submit" value="Sign Up" id="signUpBtn">
+                </form>
+                <div id="displayError"></div>
+            </div>
         </div>
 
-        <div class="jumbotron jumbotron-fluid">
+        <div class="displayApp" style="display: none;">
+            <div class="button-section">
+                <a type="button" class="pickImage" id="angry"><img src="assets/images/AngryFace.jpg"></a>
+                <a type="button" class="pickImage" id="neutral"><img src="assets/images/Praveen.jpg"></a>
+                <a type="button" class="pickImage" id="fear"><img src="assets/images/FearFace.jpg"></a>
+                <a type="button" class="pickImage" id="disgust"><img src="assets/images/BaldWhiteDude.jpg"></a>
+                <a type="button" class="pickImage" id="happy"><img src="assets/images/Jonathan.png"></a>
+                <a type="button" class="pickImage" id="sad"><img src="assets/images/SadKid.jpg"></a>
+                <a type="button" class="pickImage" id="surprise"><img src="assets/images/SurpriseFace.jpg"></a>
+            </div>
+
+            <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                  <h1 class="display-4">Welcome to FLO!</h1>
-                  <p class="lead">With cutting edge technology we can scan your face and give you
+                    <h1 class="display-4">Welcome to FLO!</h1>
+                    <p class="lead">With cutting edge technology we can scan your face and give you
                         suggestions of things to do and places to go based off of your age and emotions! Lets get
                         started!</p>
                 </div>
-              </div>
+            </div>
 
-        <div id="map"></div>
+            <div id="map"></div>
+        </div>
 
-    <script type='text/javascript' src='assets/javascript/java.js'></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATyi1cJZ_c8qY5vVvDu4kpkS8un36io1I&callback=initMap"></script>
+        <script type='text/javascript' src='assets/javascript/java.js'></script>
+        <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATyi1cJZ_c8qY5vVvDu4kpkS8un36io1I&callback=initMap"></script>
 
 </body>
 
